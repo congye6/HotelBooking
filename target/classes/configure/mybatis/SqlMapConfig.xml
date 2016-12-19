@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <!--
+  	加载属性文件
+  	在properties元素体内定义的属性首先被读取
+  	然后读取properties元素中resource或url加载的属性，它会覆盖已读取的同名属性
+  	最后读取parameterType传递的属性，它会覆盖已读取的同名属性
+  	建议不要在properties元素体内添加任何属性值，只将属性值定义在properties文件中
+  	在properties文件中定义属性名要有一定的特殊性，如：xxx.xxx
+  -->
+  <!-- 
+  <properties resource="db.properties">
+	properties中还可以配置一些属性名和属性值
+	<property name="jdbc.dirver" value=""/>
+  </properties> 
+  -->
+  
+  <!--
+	全局的配置参数，影响mybatis的运行行为
+	mybatis框架在运行时可以调整一些运行参数，如开启二级缓存，开启延迟加载...
+  -->
+  <environments default="database1">  <!-- default属性选择此次开发时需要的数据库环境的id值即可 (database1、database2、database3) -->
+        <environment id="database1">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/j2ee"/>
+                <property name="username" value="root"/>
+                <property name="password" value="mengliming786"/>
+            </dataSource>
+        </environment>
+   </environments>
+  
+</configuration>
