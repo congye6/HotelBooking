@@ -32,17 +32,6 @@ public interface CreditBlService {
 	public ResultMessage exceptionOrder(String orderId,int money);
 	
 	/**
-	 * 前置：能找到该异常订单的信用使用记录
-	 * 将异常订单延期，可恢复扣除的信用值
-	 * 操作后删除使用记录
-	 * @author congye6
-	 * @param orderId
-	 * @param money
-	 * @return
-	 */
-	public ResultMessage delayOrder(String orderId,int money);
-	
-	/**
 	 * 完成入住的订单可以增加等于订单额的信用值
 	 * 操作后添加使用记录
 	 * @author congye6

@@ -28,6 +28,11 @@ public class ClientVO {
 	 */
 	public int credit;
 	
+	/**
+	 * 
+	 */
+	public String birthday;
+	
 	public String password;
 
 	
@@ -37,13 +42,14 @@ public class ClientVO {
 	 * @param phoneNumber
 	 * @param credit
 	 */
-	public ClientVO(String id, String name, String phoneNumber, int credit,String password) {
+	public ClientVO(String id, String name, String phoneNumber, int credit,String password,String birthday) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 		this.credit = credit;
 		this.password=password;
+		this.birthday=birthday;
 	}
 	
 	/**
