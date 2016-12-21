@@ -10,13 +10,9 @@ public class ClientVO {
 	/**
 	 * 用户名
 	 */
-	public String userName;
+	public String id;
 	
-	/**
-	 * 用户密码，已加密
-	 */
-	public String password;
-	
+
 	/**
 	 * 客户姓名
 	 */
@@ -31,21 +27,25 @@ public class ClientVO {
 	 * 客户信用值，客户不能修改，初始值为3000
 	 */
 	public int credit;
+	
+	public String password;
 
+	
 	/**
-	 * @param userName
-	 * @param password
+	 * @param id
 	 * @param name
 	 * @param phoneNumber
+	 * @param credit
 	 */
-	public ClientVO(String userName, String password, String name, String phoneNumber) {
+	public ClientVO(String id, String name, String phoneNumber, int credit,String password) {
 		super();
-		this.userName = userName;
-		this.password = password;
+		this.id = id;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
+		this.credit = credit;
+		this.password=password;
 	}
-
+	
 	/**
 	 * 
 	 */
