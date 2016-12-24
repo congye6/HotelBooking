@@ -33,6 +33,8 @@ public class ClientVO {
 	 */
 	public String birthday;
 	
+	public String company;
+	
 	public String password;
 
 	

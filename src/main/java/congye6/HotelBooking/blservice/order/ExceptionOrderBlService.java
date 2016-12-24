@@ -30,21 +30,6 @@ public interface ExceptionOrderBlService {
 	 */
 	public ResultMessage delayOrder(String orderId,CheckInVO checkInVO);
 	
-	/**
-	 * 根据用户id查找订单
-	 * @author congye6
-	 * @param userId
-	 * @return
-	 */
-	public List<OrderVO> getExceptionOrdersByUser(String userId);
-	
-	/**
-	 * 根据酒店id查找订单
-	 * @author congye6
-	 * @param userId
-	 * @return
-	 */
-	public List<OrderVO> getExceptionOrdersByHotel(String hotelId);
 	
 	/**
 	 * 根据酒店id和用户id查找订单

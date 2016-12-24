@@ -34,6 +34,23 @@ public interface OrderBlService {
 	
 	
 	/**
+	 * 根据用户id获取具体状态的订单
+	 * @author congye6
+	 * @param userId
+	 * @return
+	 */
+	public List<OrderVO> getBookingOrdersByUser(String userId,OrderState orderState);
+	
+	/**
+	 * 根据酒店id获取具体状态的订单
+	 * @author congye6
+	 * @param userId
+	 * @return
+	 */
+	public List<OrderVO> getBookingOrdersByHotel(String hotelId,OrderState orderState);
+	
+	
+	/**
 	 * 获取用户在酒店的订单信息
 	 * @author congye6
 	 * @param userId

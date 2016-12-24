@@ -20,21 +20,4 @@ public interface SuccessOrderBlService {
 	 */
 	public ResultMessage successOrder(String orderId);
 	
-	/**
-	 * 获取用户完成的订单
-	 * @author congye6
-	 * @param userId
-	 * @return
-	 */
-	public List<OrderVO> getSuccessOrdersByUser(String userId);
-	
-	/**
-	 * 获取酒店完成的订单
-	 * @author congye6
-	 * @param userId
-	 * @return
-	 */
-	public List<OrderVO> getSuccessOrdersByHotel(String id);
-	
-	
 }

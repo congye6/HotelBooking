@@ -1,6 +1,7 @@
 package congye6.HotelBooking.blservice.hotel;
 
 import java.util.List;
+import java.util.Map;
 
 import congye6.HotelBooking.vo.HotelVO;
 import congye6.HotelBooking.vo.ResultMessage;
@@ -13,7 +14,6 @@ import congye6.HotelBooking.vo.ResultMessage;
 public interface HotelBlService {
 
 	/**
-	 * TODO 酒店筛选
 	 * 根据城市和商圈查找酒店
 	 * @author congye6
 	 * @param city
@@ -21,6 +21,17 @@ public interface HotelBlService {
 	 * @return
 	 */
 	public List<HotelVO> getHotels(String city,String commecialCircle);
+	
+	/**
+	 * 酒店筛选
+	 * 前置：已填写城市和商圈
+	 * @author congye6
+	 * @param city
+	 * @param commecialCircle
+	 * @param conditions
+	 * @return
+	 */
+	public List<HotelVO> getHotels(String city,String commecialCircle,Map<String,?> conditions);
 	
 	/**
 	 * 管理员添加酒店

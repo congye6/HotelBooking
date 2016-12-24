@@ -29,19 +29,4 @@ public interface CancelOrderBlService {
 	 */
 	public ResultMessage cancelExceptionOrder(String orderId,double recoverRate);
 	
-	/**
-	 * 获取用户撤销的订单
-	 * @author congye6
-	 * @param userId
-	 * @return
-	 */
-	public List<OrderVO> getCancelOrdersByUser(String userId);
-	
-	/**
-	 * 获取酒店撤销的订单
-	 * @author congye6
-	 * @param userId
-	 * @return
-	 */
-	public List<OrderVO> getCancelOrdersByHotel(String hotelId);
 }

@@ -8,7 +8,6 @@ import congye6.HotelBooking.vo.ResultMessage;
  * 下午2:55:56
  */
 public interface ClientBlService {
-	//TODO 登录方式
 	
 	/**
 	 * 用户注册，填写客户信息
