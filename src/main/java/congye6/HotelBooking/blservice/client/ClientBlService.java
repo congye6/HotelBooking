@@ -1,5 +1,7 @@
 package congye6.HotelBooking.blservice.client;
 
+import java.util.List;
+
 import congye6.HotelBooking.vo.ClientVO;
 import congye6.HotelBooking.vo.ResultMessage;
 
@@ -26,4 +28,12 @@ public interface ClientBlService {
 	 * @return
 	 */
 	public ResultMessage modifyClientInfo(ClientVO vo);
+	
+	/**
+	 * 获取用户信息
+	 * @author congye6
+	 * @param userId
+	 * @return
+	 */
+	public List<ClientVO> getClientInfo(String userId);
 }
