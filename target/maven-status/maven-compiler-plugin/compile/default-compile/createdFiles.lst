@@ -26,6 +26,7 @@ congye6\HotelBooking\blservice\user\AccountBlService.class
 congye6\HotelBooking\blservice\hotel\SearchHotelStrategy.class
 congye6\HotelBooking\enumeration\CreditOperation$4.class
 congye6\HotelBooking\vo\OrderVO.class
+congye6\HotelBooking\vo\CreditLevelVO.class
 congye6\HotelBooking\enumeration\CreditOperation$1.class
 congye6\HotelBooking\blservice\order\SuccessOrderBlService.class
 congye6\HotelBooking\blservice\client\CreditBlService.class
@@ -35,5 +36,6 @@ congye6\HotelBooking\blservice\hotel_promotion\HotelPromotionStrategy.class
 congye6\HotelBooking\enumeration\OrderState.class
 congye6\HotelBooking\vo\ResultMessage.class
 congye6\HotelBooking\vo\HotelStaffVO.class
+congye6\HotelBooking\blservice\client\LevelBlService.class
 congye6\HotelBooking\vo\AccountVO.class
 congye6\HotelBooking\vo\ClientVO.class
