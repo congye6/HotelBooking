@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="congye6.HotelBooking.mapper.hotel.HotelMapper">
+	<select id="getHotels" resultType="HotelPO">
+		select * from hotel where city=#{city} and circle=#{circle}
+	</select>
+
+	<insert id="addHotel" parameterType="HotelPO">
+		<selectKey resultType="int" keyProperty="id" order="AFTER">
+			select last_insert_id()
+		</selectKey>
+		insert into hotel(name,address,city,circle,introduction,star) value(#{name},#{address},#{city},#{circle},#{introduction},#{star})
+	</insert>
+	
+	<update id="updateHotel" parameterType="HotelPO">
+		update hotel set name=#{name},address=#{address},city=#{city},circle=#{circle},introduction=#{introduction},star=#{star}
+					where id=#{id}
+	</update>
+</mapper>

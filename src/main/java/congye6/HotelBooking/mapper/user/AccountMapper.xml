@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into account(password,type) value(#{password},#{type})
 	</insert>
 	
-	<select id="getAccount" parameterType="java.lang.String" resultType="AccountPO">
+	<select id="getAccount" parameterType="int" resultType="AccountPO">
 		select * from account where id=#{value} 
 	</select>
 	

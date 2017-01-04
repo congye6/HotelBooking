@@ -15,7 +15,7 @@ public interface AccountMapper {
 	 * @return
 	 * 2017年1月4日
 	 */
-	public AccountPO getAccount(String id);
+	public AccountPO getAccount(int id);
 	
 	/**
 	 * 添加酒店工作人员和网站营销人员账号

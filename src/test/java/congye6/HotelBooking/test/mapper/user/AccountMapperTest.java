@@ -1,4 +1,4 @@
-package congye6.HotelBooking.test.mapper;
+package congye6.HotelBooking.test.mapper.user;
 
 
 import static org.junit.Assert.*;
@@ -27,7 +27,17 @@ public class AccountMapperTest {
 	}
 	
 	@Test
+	public void getAccount(){
+		AccountPO po=mapper.getAccount(2);
+		assertEquals("ADMIN", po.getType());
+	}
+	
+	@Test
 	public void updateAccount(){
 		AccountPO po=new AccountPO("666", "ADMIN");
+		po.setId(2);
+		mapper.updateAccount(po);
+		AccountPO result=mapper.getAccount(2);
+		assertEquals("ADMIN",result.getType());
 	}
 }

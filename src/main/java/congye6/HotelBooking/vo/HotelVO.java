@@ -10,7 +10,7 @@ public class HotelVO {
 	/**
 	 * 
 	 */
-	public String id;
+	public int id;
 	
 	/**
 	 * 酒店名称
@@ -30,7 +30,7 @@ public class HotelVO {
 	/**
 	 * 所属商圈
 	 */
-	public String commercialCircle;
+	public String circle;
 	
 	/**
 	 * 简介
