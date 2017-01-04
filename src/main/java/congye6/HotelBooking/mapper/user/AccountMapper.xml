@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="congye6.HotelBooking.mapper.user.AccountMapper">
+	<insert id="addAccount" parameterType="AccountPO">
+		<selectKey resultType="int" keyProperty="id" order="AFTER"> 
+			SELECT LAST_INSERT_ID()   
+		</selectKey>
+		insert into account(password,type) value(#{password},#{type})
+	</insert>
+	
+	<select id="getAccount" parameterType="java.lang.String" resultType="AccountPO">
+		select * from account where id=#{value} 
+	</select>
+	
+	<update id="updateAccount" parameterType="AccountPO">
+		update account set password=#{password},type=#{type} where id=#{id}
+	</update>
+</mapper>

@@ -1,7 +1,7 @@
 package congye6.HotelBooking.po;
 
 public class AccountPO {
-	private String id;
+	private int id;
 	
 	private String password;
 	
@@ -9,12 +9,24 @@ public class AccountPO {
 	 * 用户类型
 	 */
 	private String type;
+	
+	
 
-	public String getId() {
+	public AccountPO() {
+		super();
+	}
+
+	public AccountPO( String password, String type) {
+		super();
+		this.password = password;
+		this.type = type;
+	}
+
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

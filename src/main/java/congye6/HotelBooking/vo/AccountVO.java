@@ -11,7 +11,7 @@ import congye6.HotelBooking.enumeration.UserType;
 public class AccountVO {
 
 	
-	public String id;
+	public int id;
 	
 	public String password;
 	
@@ -25,7 +25,7 @@ public class AccountVO {
 	 * @param password
 	 * @param type
 	 */
-	public AccountVO(String id, String password, UserType type) {
+	public AccountVO(int id, String password, UserType type) {
 		super();
 		this.id = id;
 		this.password = password;
@@ -36,7 +36,7 @@ public class AccountVO {
 	 * @param id
 	 * @param password
 	 */
-	public AccountVO(String id, String password) {
+	public AccountVO(int id, String password) {
 		super();
 		this.id = id;
 		this.password = password;
