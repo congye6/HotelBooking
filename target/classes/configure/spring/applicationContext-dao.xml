@@ -48,7 +48,7 @@
 			指定扫描的包名
 			如果扫描多个包，每个包中使用半角逗号分隔
 		-->
-		<property name="basePackage" value="mapper" />
+		<property name="basePackage" value="congye6.HotelBooking.mapper" />
 		<!-- 如果用ref，就会先于context:property-placeholder执行，使dbcp数据源失效 -->
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
 	</bean>
