@@ -4,15 +4,14 @@ import javax.servlet.ServletRequest;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.BodyContent;
 import javax.servlet.jsp.tagext.BodyTagSupport;
-
-import org.apache.commons.lang.StringUtils;
-
 /**
  * 自定义标签，用于在jsp模板中重写指定的占位内容
  * 
  * 基本原理：
- *		 将block标签内容部分添加到ServletRequest的attribute属性中
- *		 在后续override标签中再通过属性名读取出来，将其渲染到最终的页面上即可
+ * 将override的值设置到request中
+ * 在block占位标签将override的值读取出来
+ * 
+ * 主体是模板jsp
  * 
  * @author 逆风之羽
  *

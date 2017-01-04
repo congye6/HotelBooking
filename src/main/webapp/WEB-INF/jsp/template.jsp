@@ -188,7 +188,7 @@
 		              
 		              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
 		              	  <h5 class="centered">Marcel Newman</h5>
-		              	  	
+		              	  <congye6:block name="sidebar" override="true">	
 		                  <li class="mt">
 		                      <a href="index.html">
 		                          <i class="fa fa-dashboard"></i>
@@ -259,8 +259,9 @@
 		                          <li><a  href="chartjs.html">Chartjs</a></li>
 		                      </ul>
 		                  </li>
-		
+						</congye6:block>
 		              </ul>
+		              
 		              <!-- sidebar menu end-->
 		          </div>
 		      </aside>
@@ -301,5 +302,26 @@
 		    <!--common script for all pages-->
 		    <script src="assets/js/common-scripts.js"></script>
 		</congye6:block>
-	</body>
+		
+		<script>
+		      //custom select box
+		      $(function(){
+		          customSelect();
+		          showUserInfo();
+		      });
+		      
+		      function showUserInfo(){
+		          var userName=getCookie('userName');
+		          $("h5#userName").text(userName);
+		      }
+		      function setSelectMenu(indexOfSuper,indexOfSub){
+// 		          highlight main menu
+		        $('li.sub-menu > a').eq(indexOfSuper).addClass('active');
+// 		          {{--open sub menu--}}
+		        $('li.sub-menu ul').eq(indexOfSuper).css('display','block');
+// 		          {{--highlight sub menu--}}
+		        $('li.sub-menu ul.sub li').eq(indexOfSub-1).addClass('active');
+		      }
+		  </script>
+</body>
 </html>

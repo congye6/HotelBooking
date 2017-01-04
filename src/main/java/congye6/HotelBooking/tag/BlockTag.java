@@ -19,6 +19,12 @@ public class BlockTag extends BodyTagSupport {
 	 * 占位模块名称
 	 */
 	private String name;
+	
+	/**
+	 * 标记是否保留父类的内容
+	 */
+	private String override;
+	
 	private static final long serialVersionUID = 1425068108614007667L;
 	@Override
 	public int doStartTag() throws JspException{
@@ -27,11 +33,17 @@ public class BlockTag extends BodyTagSupport {
 	@Override
 	public int doEndTag() throws JspException {
 		ServletRequest request = pageContext.getRequest();
+		
+		boolean override=this.override!=null&&this.override.equals("true");
+		
 		//block标签中的默认值
 		String defaultContent = (getBodyContent() == null)?"":getBodyContent().getString();		
 		String bodyContent = (String) request.getAttribute(OverrideTag.PREFIX+ name);
 		//如果页面没有重写该模块则显示默认内容
-		bodyContent = StringUtils.isEmpty(bodyContent)?defaultContent:defaultContent+bodyContent;
+		if(override)
+			bodyContent = StringUtils.isEmpty(bodyContent)?defaultContent:bodyContent;
+		else
+			bodyContent = StringUtils.isEmpty(bodyContent)?defaultContent:defaultContent+bodyContent;
 		try {
 			pageContext.getOut().write(bodyContent);
 		} catch (IOException e) {
@@ -46,5 +58,11 @@ public class BlockTag extends BodyTagSupport {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getOverride() {
+		return override;
+	}
+	public void setOverride(String override) {
+		this.override = override;
 	}
 }
