@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="congye6.HotelBooking.mapper.client.ClientMapper">
+	<insert id="addClient" parameterType="ClientPO">
+		insert into client(id,name,phoneNumber,credit,birthday,company) value(#{id},#{name},#{phoneNumber},#{credit},#{birthday},#{company})
+	</insert>
+	
+	<select id="getClient" parameterType="int">
+		select * from client where id=#{id}
+	</select>
+	
+	<update id="updateClient" parameterType="ClientPO">
+		update client set name=#{name},phoneNumber=#{phoneNumber},credit=#{credit},birthdate=#{birthday},company=#{company}
+			where id=#{id}
+	</update>
+	
+	<update id="updateCredit">
+		update client set credit=#{credit} where id=#{id}
+	</update>
+</mapper>

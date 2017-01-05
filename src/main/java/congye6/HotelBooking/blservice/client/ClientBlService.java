@@ -35,5 +35,5 @@ public interface ClientBlService {
 	 * @param userId
 	 * @return
 	 */
-	public List<ClientVO> getClientInfo(String userId);
+	public ClientVO getClientInfo(int userId);
 }
