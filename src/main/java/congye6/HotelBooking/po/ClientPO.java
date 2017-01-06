@@ -6,7 +6,7 @@ public class ClientPO {
 	/**
 	 * 用户名
 	 */
-	private String id;
+	private int id;
 	
 
 	/**
@@ -31,7 +31,7 @@ public class ClientPO {
 	
 	private String company;
 
-	public ClientPO(String id, String name, String phoneNumber, int credit, Date birthday, String company) {
+	public ClientPO(int id, String name, String phoneNumber, int credit, Date birthday, String company) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -45,11 +45,11 @@ public class ClientPO {
 		super();
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

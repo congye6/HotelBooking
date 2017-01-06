@@ -29,10 +29,19 @@ public interface ClientMapper {
 	public void updateClient(ClientPO po);
 	
 	/**
-	 * 修改信用值
+	 * 减少信用值
 	 * @param id
-	 * @param credit
+	 * @param credit 减少的信用值
 	 * 2017年1月5日
 	 */
-	public void updateCredit(@Param("id")int id,@Param("credit")int credit);
+	public void minusCredit(@Param("id")int id,@Param("credit")int credit);
+	
+	/**
+	 * 增加信用值
+	 * @param id
+	 * @param credit 增加的信用值
+	 * 2017年1月5日
+	 */
+	public void addCredit(@Param("id")int id,@Param("credit")int credit);
+	
 }

@@ -8,16 +8,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into client(id,name,phoneNumber,credit,birthday,company) value(#{id},#{name},#{phoneNumber},#{credit},#{birthday},#{company})
 	</insert>
 	
-	<select id="getClient" parameterType="int">
+	<select id="getClient" parameterType="int" resultType="ClientPO">
 		select * from client where id=#{id}
 	</select>
 	
 	<update id="updateClient" parameterType="ClientPO">
-		update client set name=#{name},phoneNumber=#{phoneNumber},credit=#{credit},birthdate=#{birthday},company=#{company}
+		update client set name=#{name},phoneNumber=#{phoneNumber},credit=#{credit},birthday=#{birthday},company=#{company}
 			where id=#{id}
 	</update>
 	
-	<update id="updateCredit">
-		update client set credit=#{credit} where id=#{id}
+	<update id="minusCredit">
+		update client set credit=credit-#{credit} where id=#{id}
+	</update>
+	
+	<update id="addCredit">
+		update client set credit=credit+#{credit} where id=#{id}
 	</update>
 </mapper>

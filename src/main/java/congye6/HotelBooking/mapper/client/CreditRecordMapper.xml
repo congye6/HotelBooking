@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="congye6.HotelBooking.mapper.client.CreditRecordMapper">
+	<insert id="addCreditRecord" parameterType="CreditRecordPO">
+		insert into creditRecord(userId,date,orderId,creditOperation,`change`,currentCredit) value(#{userId},#{date},#{orderId},#{creditOperation},#{change},#{currentCredit})
+	</insert>
+	
+	<select id="getCreditRecords" parameterType="int" resultType="CreditRecordPO">
+		select * from creditRecord where userId=#{value}
+	</select>
+
+</mapper>

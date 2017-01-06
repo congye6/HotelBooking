@@ -53,5 +53,5 @@ public interface CreditBlService {
 	 * @param userName
 	 * @return
 	 */
-	public List<CreditRecordVO> getCreditRecords(String userName);
+	public List<CreditRecordVO> getCreditRecords(int userId);
 }

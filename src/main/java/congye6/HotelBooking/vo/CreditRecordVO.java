@@ -13,7 +13,7 @@ public class CreditRecordVO {
 	/**
 	 * user id
 	 */
-	public String userName;
+	public int userId;
 
 	/**
 	 * 日期
