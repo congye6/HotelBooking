@@ -1,5 +1,7 @@
 package congye6.HotelBooking.blservice.hotel;
 
+import java.util.List;
+
 import congye6.HotelBooking.vo.CommentVO;
 import congye6.HotelBooking.vo.ResultMessage;
 
@@ -24,4 +26,12 @@ public interface CommentsBlService {
 	 * @return
 	 */
 	public double getScore(String hotelId);
+	
+	/**
+	 * 获取酒店的评论
+	 * @param hotelId
+	 * @return
+	 * 2017年1月7日
+	 */
+	public List<CommentVO> getComments(int hotelId);
 }

@@ -10,12 +10,12 @@ public class CommentVO {
 	/**
 	 * 评论人
 	 */
-	public String userId;
+	public int userId;
 	
 	/**
 	 * 酒店id
 	 */
-	public String hotelId;
+	public int hotelId;
 	
 	public String comment;
 	
@@ -31,7 +31,7 @@ public class CommentVO {
 	 * @param comment
 	 * @param star
 	 */
-	public CommentVO(String userId, String hotelId, String comment, int score) {
+	public CommentVO(int userId, int hotelId, String comment, int score) {
 		super();
 		this.userId = userId;
 		this.hotelId = hotelId;
