@@ -18,6 +18,6 @@ public interface SuccessOrderBlService {
 	 * @param orderId
 	 * @return
 	 */
-	public ResultMessage successOrder(String orderId);
+	public ResultMessage successOrder(int orderId);
 	
 }

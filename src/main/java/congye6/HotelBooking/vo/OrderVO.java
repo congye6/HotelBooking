@@ -13,7 +13,7 @@ import congye6.HotelBooking.enumeration.RoomType;
  */
 public class OrderVO {
 	
-	public String id;
+	public int id;
 	
 	/**
 	 * 订单用户id
@@ -36,6 +36,8 @@ public class OrderVO {
 	 */
 	public Map<RoomType,Integer> roomOrder;
 	
+	public double price;
+	
 	public OrderState orderState;
 	
 	/**
@@ -56,7 +58,7 @@ public class OrderVO {
 	 * @param withChildren
 	 */
 	public OrderVO(String userId, CheckInVO checkInInfo, String hotelId, 
-			int numberOfPeople, boolean withChildren,OrderState orderState) {
+			int numberOfPeople, boolean withChildren,OrderState orderState,double price) {
 		super();
 		this.userId = userId;
 		this.checkInInfo = checkInInfo;
@@ -64,6 +66,7 @@ public class OrderVO {
 		this.numberOfPeople = numberOfPeople;
 		this.withChildren = withChildren;
 		this.orderState=orderState;
+		this.price=price;
 	}
 
 	/**

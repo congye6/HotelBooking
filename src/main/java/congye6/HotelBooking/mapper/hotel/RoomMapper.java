@@ -1,26 +1,22 @@
-package congye6.HotelBooking.blservice.hotel;
+package congye6.HotelBooking.mapper.hotel;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import congye6.HotelBooking.enumeration.RoomType;
+import congye6.HotelBooking.po.RoomPO;
 import congye6.HotelBooking.vo.ResultMessage;
 import congye6.HotelBooking.vo.RoomVO;
 
-/**
- * 酒店客房数量管理
- * @author congye6
- * 2016年12月20日
- * 下午8:24:10
- */
-public interface RoomBlService {
-	
+public interface RoomMapper {
 	/**
 	 * 获得酒店各类型的可用客房数和价格
 	 * @author congye6
 	 * @param hotelId
 	 * @return
 	 */
-	public List<RoomVO> getRoomInfos(int hotelId);
+	public List<RoomPO> getRoomInfos(int hotelId);
 	
 	/**
 	 * 录入可用客房
@@ -28,7 +24,7 @@ public interface RoomBlService {
 	 * @param vo
 	 * @return
 	 */
-	public ResultMessage addRoomInfo(RoomVO vo);
+	public void addRoomInfo(RoomPO po);
 	
 	/**
 	 * 预订客房后，房间数减一
@@ -37,8 +33,8 @@ public interface RoomBlService {
 	 * @param type
 	 * @return
 	 */
-	public ResultMessage minusRoom(int hotelId,RoomType type);
-	
+	public void minusRoom(@Param("hotelId")int hotelId,@Param("type")String type);
+		
 	/**
 	 * 退房后房间数加一
 	 * @author congye6
@@ -46,5 +42,5 @@ public interface RoomBlService {
 	 * @param type
 	 * @return
 	 */
-	public ResultMessage addRoom(int hotelId,RoomType type);
+	public void addRoom(@Param("hotelId")int hotelId,@Param("type")String type);
 }

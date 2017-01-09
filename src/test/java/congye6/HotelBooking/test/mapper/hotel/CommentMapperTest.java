@@ -20,7 +20,13 @@ public class CommentMapperTest {
 	
 	@Test
 	public void addComment(){
-		CommentPO po=new CommentPO(6, 1, "强无敌", 5);
+		CommentPO po=new CommentPO(6, 1, "强", 5);
+		mapper.addComment(po);
+	}
+	
+	@Test
+	public void getComments(){
+		mapper.getComments(1);
 	}
 	
 }

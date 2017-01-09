@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		value(#{userId},#{hotelId},#{comment},#{score})
 	</insert>
 	
-	<select id="getComments" parameterType="CommentPO">
+	<select id="getComments" parameterType="int" resultType="CommentPO">
 		select * from `comment` where hotelId=#{hotelId}
 	</select>
 </mapper>

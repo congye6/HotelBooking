@@ -12,7 +12,7 @@ public class RoomVO {
 	/**
 	 * 所属酒店
 	 */
-	public String hotelId;
+	public int hotelId;
 	
 	/**
 	 * 房间类型
@@ -35,7 +35,7 @@ public class RoomVO {
 	 * @param number
 	 * @param price
 	 */
-	public RoomVO(String hotelId, RoomType type, int number, double price) {
+	public RoomVO(int hotelId, RoomType type, int number, double price) {
 		super();
 		this.hotelId = hotelId;
 		this.type = type;
