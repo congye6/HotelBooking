@@ -19,7 +19,7 @@ public interface ExceptionOrderBlService {
 	 * @param orderId
 	 * @return
 	 */
-	public ResultMessage exceptionOrder(String orderId);
+	public ResultMessage exceptionOrder(int orderId);
 	
 	/**
 	 * 将异常订单延期
@@ -28,29 +28,7 @@ public interface ExceptionOrderBlService {
 	 * @param checkInVO
 	 * @return
 	 */
-	public ResultMessage delayOrder(String orderId,CheckInVO checkInVO);
+	public ResultMessage delayOrder(int orderId,CheckInVO checkInVO);
 	
 	
-	/**
-	 * 根据酒店id和用户id查找订单
-	 * @author congye6
-	 * @param userId
-	 * @return
-	 */
-	public List<OrderVO> getExceptionOrders(String hotelId,String userId);
-	
-	/**
-	 * 获取今天异常订单
-	 * @author congye6
-	 * @return
-	 */
-	public List<OrderVO> getTodayExceptionOrders();
-	
-	/**
-	 * 根据日期查找异常订单
-	 * @author congye6
-	 * @param date
-	 * @return
-	 */
-	public List<OrderVO> getExcetionOrdersbyDate(String date);
 }

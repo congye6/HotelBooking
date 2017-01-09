@@ -30,7 +30,7 @@ public interface OrderBlService {
 	 * @param checkInVO
 	 * @return
 	 */
-	public ResultMessage updateOrder(String orderId,CheckInVO checkInVO);
+	public ResultMessage updateOrder(int orderId,CheckInVO checkInVO);
 	
 	
 	/**
@@ -39,7 +39,7 @@ public interface OrderBlService {
 	 * @param userId
 	 * @return
 	 */
-	public List<OrderVO> getBookingOrdersByUser(String userId,OrderState orderState);
+	public List<OrderVO> getOrdersByUser(int userId,OrderState orderState);
 	
 	/**
 	 * 根据酒店id获取具体状态的订单
@@ -47,7 +47,7 @@ public interface OrderBlService {
 	 * @param userId
 	 * @return
 	 */
-	public List<OrderVO> getBookingOrdersByHotel(String hotelId,OrderState orderState);
+	public List<OrderVO> getOrdersByHotel(int hotelId,OrderState orderState);
 	
 	
 	/**
@@ -57,7 +57,7 @@ public interface OrderBlService {
 	 * @param hotelId
 	 * @return
 	 */
-	public List<OrderVO> getOrders(String userId,String hotelId);
+	public List<OrderVO> getOrders(int userId,int hotelId);
 	
 	/**
 	 * 获取用户在酒店的订单状态
@@ -66,5 +66,12 @@ public interface OrderBlService {
 	 * @param hotelId
 	 * @return
 	 */
-	public List<OrderState> hasOrdered(String userId,String hotelId);
+	public List<OrderState> hasOrdered(int userId,int hotelId);
+	
+	/**
+	 * 查看所有未执行订单
+	 * @return
+	 * 2017年1月9日
+	 */
+	public List<OrderVO> getUnfinishOrder();
 }

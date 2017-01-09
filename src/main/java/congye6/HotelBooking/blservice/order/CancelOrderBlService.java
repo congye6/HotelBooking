@@ -18,7 +18,7 @@ public interface CancelOrderBlService {
 	 * @param orderId
 	 * @return
 	 */
-	public ResultMessage cancelOrder(String orderId);
+	public ResultMessage cancelOrder(int orderId);
 	
 	/**
 	 * 将异常订单置为撤销订单
@@ -27,6 +27,6 @@ public interface CancelOrderBlService {
 	 * @param recoverRate 回复信用值的比例
 	 * @return
 	 */
-	public ResultMessage cancelExceptionOrder(String orderId,double recoverRate);
+	public ResultMessage cancelExceptionOrder(int orderId,double recoverRate);
 	
 }

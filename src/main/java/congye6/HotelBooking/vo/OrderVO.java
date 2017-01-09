@@ -18,7 +18,7 @@ public class OrderVO {
 	/**
 	 * 订单用户id
 	 */
-	public String userId;
+	public int userId;
 	
 	/**
 	 * 入住信息
@@ -29,7 +29,7 @@ public class OrderVO {
 	/**
 	 * 酒店id
 	 */
-	public String hotelId;
+	public int hotelId;
 	
 	/**
 	 * 订的各房间类型的数量
@@ -57,7 +57,7 @@ public class OrderVO {
 	 * @param numberOfPeople
 	 * @param withChildren
 	 */
-	public OrderVO(String userId, CheckInVO checkInInfo, String hotelId, 
+	public OrderVO(int userId, CheckInVO checkInInfo,int hotelId, 
 			int numberOfPeople, boolean withChildren,OrderState orderState,double price) {
 		super();
 		this.userId = userId;
