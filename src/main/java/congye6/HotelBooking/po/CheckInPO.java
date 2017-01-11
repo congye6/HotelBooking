@@ -61,6 +61,9 @@ public class CheckInPO {
 	public void setDeadline(String deadline) {
 		this.deadline = deadline;
 	}
+
+	
+	
 	
 	
 }

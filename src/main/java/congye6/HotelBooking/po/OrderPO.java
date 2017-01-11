@@ -9,11 +9,11 @@ public class OrderPO {
 	
 	private int hotelId;
 	
-	private Date startDate;
+	private String startDate;
 	
-	private Date endDate;
+	private String endDate;
 	
-	private Date deadline;
+	private String deadline;
 	
 	private double price;
 	
@@ -22,9 +22,8 @@ public class OrderPO {
 	private int numberOfPeople;
 	
 	private boolean withChildren;
-	
 
-	public OrderPO(int id, int userId, int hotelId, Date startDate, Date endDate, Date deadline, double price,
+	public OrderPO(int id, int userId, int hotelId, String startDate, String endDate, String deadline, double price,
 			String state, int numberOfPeople, boolean withChildren) {
 		super();
 		this.id = id;
@@ -37,13 +36,11 @@ public class OrderPO {
 		this.state = state;
 		this.numberOfPeople = numberOfPeople;
 		this.withChildren = withChildren;
-		
 	}
 
 	public OrderPO() {
 		super();
 	}
-	
 
 	public int getId() {
 		return id;
@@ -69,27 +66,27 @@ public class OrderPO {
 		this.hotelId = hotelId;
 	}
 
-	public Date getStartDate() {
+	public String getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
 
-	public Date getEndDate() {
+	public String getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
 
-	public Date getDeadline() {
+	public String getDeadline() {
 		return deadline;
 	}
 
-	public void setDeadline(Date deadline) {
+	public void setDeadline(String deadline) {
 		this.deadline = deadline;
 	}
 
@@ -117,11 +114,13 @@ public class OrderPO {
 		this.numberOfPeople = numberOfPeople;
 	}
 
-	public boolean getWithChildren() {
+	public boolean isWithChildren() {
 		return withChildren;
 	}
 
 	public void setWithChildren(boolean withChildren) {
 		this.withChildren = withChildren;
 	}
+	
+	
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="congye6.HotelBooking.mapper.order.OrderMapper">
+	<insert id="addOrder" parameterType="OrderPO">
+		insert into `order`(`userId`,hotelId,startDate,endDate,deadline,`price`,`state`,numberOfPeople,withChildren)
+		value(#{userId},#{hotelId},#{startDate},#{endDate},#{deadline},#{price},#{state},#{numberOfPeople},#{withChildren})
+	</insert>
+	
+	<update id="updateOrderState">
+		update `order` set `state`=#{state} where id=#{orderId}
+	</update>
+	
+	<update id="updateOrderDate" parameterType="CheckInPO">
+		update `order` set startDate=#{startDate},endDate=#{endDate},deadline=#{deadline}
+		where id=#{orderId}
+	</update>
+	
+	<select id="getOrdersByUser" resultType="OrderPO">
+		select * from `order` where userId=#{userId} and `state`=#{state}
+	</select>
+	
+	<select id="getOrdersByHotel" resultType="OrderPO">
+		select * from `order` where hotelId=#{hotelId} and `state`=#{state}
+	</select>
+	
+	<select id="getOrders" resultType="OrderPO">
+		select * from `order` where userId=#{userId} and hotelId=#{hotelId}
+	</select>
+	
+	<select id="getOrderState" resultType="java.lang.String">
+		select `state` from `order` where userId=#{userId} and hotelId=#{hotelId}
+	</select>
+	
+	<select id="getUnfinishOrder" resultType="OrderPO">
+		select * from `order` where `state`&lt;&gt;'success'
+	</select>
+</mapper>

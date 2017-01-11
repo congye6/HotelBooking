@@ -1,13 +1,11 @@
 package congye6.HotelBooking.mapper.order;
 
-import java.sql.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
 import congye6.HotelBooking.po.CheckInPO;
 import congye6.HotelBooking.po.OrderPO;
-import congye6.HotelBooking.vo.OrderVO;
 
 /**
  * 维护订单的基本信息
@@ -35,7 +33,7 @@ public interface OrderMapper {
 	 * 更改订单入住时间
 	 * @param po
 	 * 2017年1月9日
-	 */
+	 */  
 	public void updateOrderDate(CheckInPO po);
 	
 	/**
@@ -44,7 +42,7 @@ public interface OrderMapper {
 	 * @param userId
 	 * @return
 	 */
-	public List<OrderPO> getOrdersByUser(int userId,String state);
+	public List<OrderPO> getOrdersByUser(@Param("userId")int userId,@Param("state")String state);
 	
 	/**
 	 * 根据酒店id获取具体状态的订单
@@ -52,7 +50,7 @@ public interface OrderMapper {
 	 * @param userId
 	 * @return
 	 */
-	public List<OrderPO> getOrdersByHotel(int hotelId,String state);
+	public List<OrderPO> getOrdersByHotel(@Param("hotelId")int hotelId,@Param("state")String state);
 	
 	/**
 	 * 获取用户在酒店的订单信息
@@ -61,7 +59,7 @@ public interface OrderMapper {
 	 * @param hotelId
 	 * @return
 	 */
-	public List<OrderPO> getOrders(int userId,int hotelId);
+	public List<OrderPO> getOrders(@Param("userId")int userId,@Param("hotelId")int hotelId);
 	
 	/**
 	 * 获取用户在酒店的订单状态
@@ -70,7 +68,7 @@ public interface OrderMapper {
 	 * @param hotelId
 	 * @return
 	 */
-	public List<String> getOrderState(int userId,int hotelId);
+	public List<String> getOrderState(@Param("userId")int userId,@Param("hotelId")int hotelId);
 
 	/**
 	 * 查看所有未执行订单
