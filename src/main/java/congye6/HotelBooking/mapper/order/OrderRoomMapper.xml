@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="congye6.HotelBooking.mapper.order.OrderRoomMapper">
+	<insert id="addOrderRoom" parameterType="OrderRoomPO">
+		insert into order_room(orderId,type,number) value(#{orderId},#{type},#{number})
+	</insert>
+	
+	<select id="getOrderRoom" resultType="OrderRoomPO" parameterType="int">
+		select * from order_room where orderId=#{orderId}
+	</select>
+</mapper>

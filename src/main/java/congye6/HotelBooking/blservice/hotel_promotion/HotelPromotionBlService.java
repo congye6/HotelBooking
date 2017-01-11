@@ -7,6 +7,7 @@ import congye6.HotelBooking.vo.OrderVO;
 import congye6.HotelBooking.vo.ResultMessage;
 
 /**
+ * 酒店促销
  * @author congye6
  * 2016年12月24日
  * 上午11:45:49

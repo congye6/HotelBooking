@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="congye6.HotelBooking.mapper.hotel_promotion.DiscountMapper">
+	<insert id="setDiscount" parameterType="DiscountPO">
+		insert into hotel_promotion(hotelId,`type`,`discount`)
+		value(#{hotelId},#{type},#{discount})
+		<!-- 主键存在时更新 -->
+		ON DUPLICATE KEY UPDATE
+		`discount`=#{discount}
+	</insert>
+</mapper>

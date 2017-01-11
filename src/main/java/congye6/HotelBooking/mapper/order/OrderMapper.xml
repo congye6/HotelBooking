@@ -5,6 +5,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="congye6.HotelBooking.mapper.order.OrderMapper">
 	<insert id="addOrder" parameterType="OrderPO">
+		<selectKey keyProperty="id" order="AFTER" resultType="int">
+			select last_insert_id()
+		</selectKey>
 		insert into `order`(`userId`,hotelId,startDate,endDate,deadline,`price`,`state`,numberOfPeople,withChildren)
 		value(#{userId},#{hotelId},#{startDate},#{endDate},#{deadline},#{price},#{state},#{numberOfPeople},#{withChildren})
 	</insert>
@@ -31,7 +34,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="getOrderState" resultType="java.lang.String">
-		select `state` from `order` where userId=#{userId} and hotelId=#{hotelId}
+		select distinct `state` from `order` where userId=#{userId} and hotelId=#{hotelId}
 	</select>
 	
 	<select id="getUnfinishOrder" resultType="OrderPO">

@@ -8,7 +8,7 @@ import congye6.HotelBooking.enumeration.HotelPromotionType;
  * 上午11:47:58
  */
 public class DiscountVO {
-	public String hotelId;
+	public int hotelId;
 	
 	public HotelPromotionType promotionType;
 	
@@ -19,7 +19,7 @@ public class DiscountVO {
 	 * @param promotionType
 	 * @param discount
 	 */
-	public DiscountVO(String hotelId, HotelPromotionType promotionType, double discount) {
+	public DiscountVO(int hotelId, HotelPromotionType promotionType, double discount) {
 		super();
 		this.hotelId = hotelId;
 		this.promotionType = promotionType;

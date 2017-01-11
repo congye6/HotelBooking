@@ -38,4 +38,29 @@ public class OrderMapperTest {
 	public void updateOrderDate(){
 		mapper.updateOrderDate(new CheckInPO(1,"2016-07-12", "2016-07-13", "2016-07-11"));
 	}
+	
+	@Test
+	public void getOrderByUser(){
+		mapper.getOrdersByUser(6, "cancel");
+	}
+	
+	@Test
+	public void getOrderByHotel(){
+		mapper.getOrdersByHotel(1, "success");
+	}
+	
+	@Test
+	public void getOrders(){
+		mapper.getOrders(6, 1);
+	}
+	
+	@Test
+	public void getOrderState(){
+		mapper.getOrderState(6, 1);
+	}
+	
+	@Test
+	public void getUnfinishOrder(){
+		mapper.getUnfinishOrder();
+	}
 }
