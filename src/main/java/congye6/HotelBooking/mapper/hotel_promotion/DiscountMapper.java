@@ -34,5 +34,5 @@ public interface DiscountMapper {
 	 * @return
 	 * 2017年1月11日
 	 */
-	public List<DiscountPO> getDiscount(int hotelId);
+	public List<DiscountPO> getDiscountByHotel(int hotelId);
 }

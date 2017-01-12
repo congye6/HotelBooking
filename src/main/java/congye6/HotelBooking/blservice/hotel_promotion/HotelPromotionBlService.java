@@ -1,10 +1,11 @@
 package congye6.HotelBooking.blservice.hotel_promotion;
 
 import java.util.List;
-
 import congye6.HotelBooking.vo.DiscountVO;
 import congye6.HotelBooking.vo.OrderVO;
 import congye6.HotelBooking.vo.ResultMessage;
+
+
 
 /**
  * 酒店促销

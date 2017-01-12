@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="congye6.HotelBooking.mapper.site_promotion.VipDiscountMapper">
+	<insert id="setDiscount" parameterType="VipDiscountPO">
+		insert into vip_discount(`level`,`circle`,`discount`)
+		value(#{level},#{circle},#{discount})
+		ON DUPLICATE KEY UPDATE
+		`discount`=#{discount}
+	</insert>
+	
+	<select id="getDiscount" resultType="double">
+		select `discount` from vip_discount where circle=#{circle} and level=#{level}
+	</select>
+</mapper>

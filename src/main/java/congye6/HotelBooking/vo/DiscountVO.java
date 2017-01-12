@@ -1,7 +1,6 @@
 package congye6.HotelBooking.vo;
 
 import congye6.HotelBooking.enumeration.HotelPromotionType;
-
 /**
  * @author congye6
  * 2016年12月24日

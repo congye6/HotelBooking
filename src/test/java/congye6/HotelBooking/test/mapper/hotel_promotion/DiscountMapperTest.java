@@ -20,6 +20,16 @@ public class DiscountMapperTest {
 	
 	@Test
 	public void setDiscount(){
-		mapper.setDiscount(new DiscountPO(1, "holiday", 0.95));
+		mapper.setDiscount(new DiscountPO(1, "birthday", 0.9));
+	}
+	
+	@Test
+	public void getDiscountByHotel(){
+		mapper.getDiscountByHotel(1);
+	}
+	
+	@Test
+	public void getDiscount(){
+		mapper.getDiscount(1, "birthday");
 	}
 }

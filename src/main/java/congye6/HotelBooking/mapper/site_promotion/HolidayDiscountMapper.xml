@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="congye6.HotelBooking.mapper.site_promotion.HolidayDiscountMapper">
+	<update id="setDiscount" parameterType="double">
+		update website_holiday_discount set `discount`=#{discount}
+	</update>
+	
+	<select id="getDiscount" resultType="double">
+		select `discount` from website_holiday_discount
+	</select>
+</mapper>

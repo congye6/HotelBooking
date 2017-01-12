@@ -37,5 +37,11 @@ public interface SitePromotionBlService {
 	 */
 	public ResultMessage setVipDiscount(VipDiscountVO discount);
 	
+	/**
+	 * 设置多个折扣
+	 * @param discounts
+	 * @return
+	 * 2017年1月12日
+	 */
 	public ResultMessage setVipDiscount(List<VipDiscountVO> discounts);
 }

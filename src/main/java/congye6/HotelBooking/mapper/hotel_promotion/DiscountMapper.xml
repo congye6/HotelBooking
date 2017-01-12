@@ -11,4 +11,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		ON DUPLICATE KEY UPDATE
 		`discount`=#{discount}
 	</insert>
+	
+	<select id="getDiscount" resultType="double">
+		select `discount` from hotel_promotion where hotelId=#{hotelId} and type=#{type}
+	</select>
+	
+	<select id="getDiscountByHotel" parameterType="int" resultType="DiscountPO">
+		select * from hotel_promotion where hotelId=#{hotelId}
+	</select>
 </mapper>
