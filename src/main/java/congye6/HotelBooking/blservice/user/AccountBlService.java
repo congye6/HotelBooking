@@ -21,7 +21,7 @@ public interface AccountBlService {
 	 * @param password
 	 * @return
 	 */
-	public ResultMessage login(String id,String password);
+	public ResultMessage login(int id,String password);
 	
 	/**
 	 * 返回登录用户的类型
@@ -31,7 +31,7 @@ public interface AccountBlService {
 	 * @param password
 	 * @return
 	 */
-	public UserType getUserType(String id,String password);
+	public UserType getUserType(int id,String password);
 	
 	/**
 	 * 添加酒店工作人员和网站营销人员账号
@@ -48,6 +48,6 @@ public interface AccountBlService {
 	 * @param newPassword
 	 * @return
 	 */
-	public ResultMessage changePassword(String id,String newPassword);
+	public ResultMessage changePassword(int id,String newPassword);
 	
 }

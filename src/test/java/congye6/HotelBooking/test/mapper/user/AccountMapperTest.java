@@ -28,8 +28,8 @@ public class AccountMapperTest {
 	
 	@Test
 	public void getAccount(){
-		AccountPO po=mapper.getAccount(2);
-		assertEquals("ADMIN", po.getType());
+		AccountPO po=mapper.getAccount(9);
+		assertEquals(null, po);
 	}
 	
 	@Test

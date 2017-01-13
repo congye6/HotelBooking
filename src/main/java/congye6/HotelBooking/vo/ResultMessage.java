@@ -17,8 +17,8 @@ public class ResultMessage {
 	 */
 	private String message;
 	
-	public ResultMessage(){
-		this.success=true;
+	public ResultMessage(boolean success){
+		this.success=success;
 	}
 	
 	public ResultMessage(boolean success,String message){

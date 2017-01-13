@@ -1,5 +1,7 @@
 package congye6.HotelBooking.po;
 
+import congye6.HotelBooking.vo.AccountVO;
+
 public class AccountPO {
 	private int id;
 	
@@ -20,6 +22,12 @@ public class AccountPO {
 		super();
 		this.password = password;
 		this.type = type;
+	}
+	
+	public AccountPO(AccountVO vo){
+		this.password=vo.password;
+		this.id=vo.id;
+		this.type=vo.type.toString();
 	}
 
 	public int getId() {

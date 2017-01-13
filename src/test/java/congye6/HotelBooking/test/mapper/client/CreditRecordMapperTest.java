@@ -10,14 +10,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import congye6.HotelBooking.mapper.client.CreditRecordMapper;
 import congye6.HotelBooking.po.CreditRecordPO;
-import congye6.HotelBooking.test.mapper.ConstValue;
+import congye6.HotelBooking.test.ConstValue;
 
 public class CreditRecordMapperTest {
 	private CreditRecordMapper mapper;
 	
 	@Before
 	public void setup(){
-		ApplicationContext context=new ClassPathXmlApplicationContext(ConstValue.SPRING_XML_PATH);
+		ApplicationContext context=new ClassPathXmlApplicationContext(ConstValue.SPRING_DAO_PATH);
 		mapper=context.getBean(CreditRecordMapper.class);
 	}
 	

@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import congye6.HotelBooking.mapper.user.HotelStaffMapper;
 import congye6.HotelBooking.po.HotelStaffPO;
-import congye6.HotelBooking.test.mapper.ConstValue;
+import congye6.HotelBooking.test.ConstValue;
 
 public class HotelStaffMapperTest {
 
@@ -19,7 +19,7 @@ public class HotelStaffMapperTest {
 	
 	@Before
 	public void setup(){
-		ApplicationContext context=new ClassPathXmlApplicationContext(ConstValue.SPRING_XML_PATH);
+		ApplicationContext context=new ClassPathXmlApplicationContext(ConstValue.SPRING_DAO_PATH);
 		mapper=context.getBean(HotelStaffMapper.class);
 	}
 	

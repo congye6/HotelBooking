@@ -9,14 +9,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import congye6.HotelBooking.mapper.client.ClientMapper;
 import congye6.HotelBooking.po.ClientPO;
-import congye6.HotelBooking.test.mapper.ConstValue;
+import congye6.HotelBooking.test.ConstValue;
 
 public class ClientMapperTest {
 	private ClientMapper mapper;
 	
 	@Before
 	public void setup(){
-		ApplicationContext context=new ClassPathXmlApplicationContext(ConstValue.SPRING_XML_PATH);
+		ApplicationContext context=new ClassPathXmlApplicationContext(ConstValue.SPRING_DAO_PATH);
 		mapper=context.getBean(ClientMapper.class);
 	}
 	

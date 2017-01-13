@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import congye6.HotelBooking.mapper.client.LevelMapper;
 import congye6.HotelBooking.po.LevelPO;
-import congye6.HotelBooking.test.mapper.ConstValue;
+import congye6.HotelBooking.test.ConstValue;
 
 public class LevelMapperTest {
 
@@ -17,7 +17,7 @@ public class LevelMapperTest {
 	
 	@Before
 	public void setup(){
-		ApplicationContext context=new ClassPathXmlApplicationContext(ConstValue.SPRING_XML_PATH);
+		ApplicationContext context=new ClassPathXmlApplicationContext(ConstValue.SPRING_DAO_PATH);
 		mapper=context.getBean(LevelMapper.class);
 	}
 	
