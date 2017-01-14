@@ -35,11 +35,12 @@ public interface AccountBlService {
 	
 	/**
 	 * 添加酒店工作人员和网站营销人员账号
+	 * 返回插入的账号id
 	 * @author congye6
 	 * @param vo
 	 * @return
 	 */
-	public ResultMessage addAccount(AccountVO vo);
+	public int addAccount(AccountVO vo);
 	
 	/**
 	 * 修改密码

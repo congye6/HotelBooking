@@ -27,11 +27,11 @@ public class ClientPO {
 	/**
 	 * 
 	 */
-	private Date birthday;
+	private String birthday;
 	
 	private String company;
 
-	public ClientPO(int id, String name, String phoneNumber, int credit, Date birthday, String company) {
+	public ClientPO(int id, String name, String phoneNumber, int credit, String birthday, String company) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -77,11 +77,11 @@ public class ClientPO {
 		this.credit = credit;
 	}
 
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(Date birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 

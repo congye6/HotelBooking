@@ -36,7 +36,7 @@ public class AccountMapperTest {
 	public void updateAccount(){
 		AccountPO po=new AccountPO("666", "ADMIN");
 		po.setId(2);
-		mapper.updateAccount(po);
+		
 		AccountPO result=mapper.getAccount(2);
 		assertEquals("ADMIN",result.getType());
 	}

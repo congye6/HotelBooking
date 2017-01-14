@@ -42,20 +42,28 @@ public class AccountBl implements AccountBlService{
 	@Override
 	public UserType getUserType(int id, String password) {
 		
-		return null;
+		if(password==null||password.length()==0)
+			return UserType.UNKNOW;
+		
+		AccountPO account=mapper.getAccount(id);
+		if(account==null)
+			return UserType.UNKNOW;
+		
+		
+		return UserType.valueOf(account.getType());
 	}
 
 	@Override
-	public ResultMessage addAccount(AccountVO vo) {
+	public int addAccount(AccountVO vo) {
 		AccountPO po=new AccountPO(vo);
 		mapper.addAccount(po);
-		return new ResultMessage(true);
+		return po.getId();
 	}
 
 	@Override
-	public ResultMessage changePassword(int id, String newPassword) {
-		// TODO Auto-generated method stub
-		return null;
+	public ResultMessage changePassword(int id, String password) {
+		mapper.updatePassword(id, password);
+		return new ResultMessage(true);
 	}
 
 }

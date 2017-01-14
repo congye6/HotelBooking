@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from account where id=#{value} 
 	</select>
 	
-	<update id="updateAccount" parameterType="AccountPO">
-		update account set password=#{password},type=#{type} where id=#{id}
+	<update id="updatePassword">
+		update account set password=#{password} where id=#{id}
 	</update>
 </mapper>

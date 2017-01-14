@@ -22,7 +22,7 @@ public class ClientMapperTest {
 	
 	@Test
 	public void addClient(){
-		ClientPO po=new ClientPO(6, "congye7", "15978012345", 3000, Date.valueOf("2001-11-11"), null);
+		ClientPO po=new ClientPO(6, "congye7", "15978012345", 3000, "2001-11-11", null);
 		mapper.addClient(po);
 	}
 	
@@ -34,7 +34,7 @@ public class ClientMapperTest {
 	
 	@Test
 	public void updateClient(){
-		ClientPO po=new ClientPO(6, "congye6", "15978012345", 3000, Date.valueOf("2011-11-11"), null);
+		ClientPO po=new ClientPO(6, "congye6", "15978012345", 3000, "2011-11-11", null);
 		mapper.updateClient(po);
 	}
 	
