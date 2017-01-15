@@ -28,6 +28,7 @@ public class ClientBl implements ClientBlService{
 		//添加登录账号，获得注册的id
 		int id=accountBl.addAccount(new AccountVO(0, vo.password,UserType.CLIENT));
 		po.setId(id);
+		po.setCredit(3000);//初始信用值为3000
 		mapper.addClient(po);
 		return new ResultMessage(true);
 	}

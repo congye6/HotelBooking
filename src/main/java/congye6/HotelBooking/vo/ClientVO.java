@@ -1,6 +1,8 @@
 package congye6.HotelBooking.vo;
 
-import congye6.HotelBooking.Util.StringUtil;
+
+
+import congye6.HotelBooking.util.StringUtil;
 
 /**
  * 客户基本信息
@@ -66,7 +68,13 @@ public class ClientVO {
 			message.setMessage("请填写用户名和密码");
 			return message;
 		}
-			
+		//如果填写了手机号，手机号码必须符合格式
+		if(StringUtil.isNull(phoneNumber)||StringUtil.isPhoneNumber(phoneNumber)){
+			message.setMessage("请填写正确的手机号");
+			return message;
+		}
+		
+		
 		
 		return message;
 	}
