@@ -38,11 +38,13 @@
   		对标记有Controller的类中标记有RequestMappering的方法进行映射，在RequestMapping中定义要映射的url
   		使用注解的映射器不用在xml中配置url和Handler的映射关系
   	-->
-  	<context:component-scan base-package="congye6.HotelBooking.controller" />
-  	<mvc:annotation-driven/>
+  	<!-- 对静态资源的映射 -->
+    
   	
-    
-    
+  	
+  	<context:component-scan base-package="congye6.HotelBooking.controller" />
+  	
+    <mvc:annotation-driven/>
 	
 	<!--
 		配置视图解析器

@@ -2,6 +2,7 @@ package congye6.HotelBooking.vo;
 
 
 
+import congye6.HotelBooking.util.DateUtil;
 import congye6.HotelBooking.util.StringUtil;
 
 /**
@@ -74,8 +75,12 @@ public class ClientVO {
 			return message;
 		}
 		
+		if(!StringUtil.isDate(birthday)||!DateUtil.isBeforeDate(birthday)){
+			message.setMessage("请输入正确的生日");
+			return message;
+		}
 		
-		
+		message.setSuccess(true);
 		return message;
 	}
 	
