@@ -14,7 +14,7 @@
 	    <!-- Custom styles for this template -->
 	    <link href="/HotelBooking/assets/css/style.css" rel="stylesheet">
 	    <link href="/HotelBooking/assets/css/style-responsive.css" rel="stylesheet">
-	
+		<link href="/HotelBooking/css/alert.css" rel="stylesheet">
 	    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	    <!--[if lt IE 9]>
 	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -29,19 +29,19 @@
 	  <div id="login-page">
 	  	<div class="container">
 	  	
-		      <form:form class="form-login" action="index.html" method="put">
+		      <div class="form-login" >
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">
-		            <input type="text" class="form-control" placeholder="User ID" autofocus>
+		            <input type="text" id="id" class="form-control" placeholder="User ID" autofocus>
 		            <br>
-		            <input type="password" class="form-control" placeholder="Password">
+		            <input type="password" id="password" class="form-control" placeholder="Password">
 		            <label class="checkbox">
 		                <span class="pull-right">
 		                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
 		
 		                </span>
 		            </label>
-		            <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
+		            <button class="btn btn-theme btn-block" onclick="login()"><i class="fa fa-lock"></i> SIGN IN</button>
 		            <hr>
 		            
 		            <div class="login-social-link centered">
@@ -90,10 +90,15 @@
 		                      </div>
 		                      <div class="modal-body">
 		                          <p>用户名</p>
-		                          <input type="text" name="name"   class="form-control placeholder-no-fix">
+		                          <input type="text" id="name"   class="form-control placeholder-no-fix">
 		                          <p>密码</p>
-		                          <input type="password" name="password"   class="form-control placeholder-no-fix">
-		
+		                          <input type="password" id="password"   class="form-control placeholder-no-fix">
+								  <p>手机号</p>
+		                          <input type="text" id="phoneNumber"   class="form-control placeholder-no-fix">
+		                          <p>合作企业</p>
+		                          <input type="text" id="company"   class="form-control placeholder-no-fix">
+		                          <p>生日</p>
+		                          <input type="text" id="birthday"   class="form-control placeholder-no-fix">
 		                      </div>
 		                      <div class="modal-footer">
 		                          <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
@@ -104,7 +109,7 @@
 		          </div>
 		          <!-- modal -->
 		
-		      </form:form>	  	
+		      </div>	  	
 	  	
 	  	</div>
 	  </div>
@@ -112,7 +117,7 @@
 	    <!-- js placed at the end of the document so the pages load faster -->
 	    <script src="/HotelBooking/assets/js/jquery.js"></script>
 	    <script src="/HotelBooking/assets/js/bootstrap.min.js"></script>
-	
+		<script type="text/javascript" src="/HotelBooking/js/alert.js"></script>
 	    <!--BACKSTRETCH-->
 	    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
 	    <script type="text/javascript" src="/HotelBooking/assets/js/jquery.backstretch.min.js"></script>
@@ -124,27 +129,103 @@
 	</body>
 	
 	<script type="text/javascript">
+		function login(){
+		    var id=$("input#id").val();
+		    var password=$("input#password").val();
+		    
+		    if(id==""){
+				zeroModal.alert("请输入id");
+				return;
+		    }
+		    var pattern=/^[0-9]*$/;
+		    if(!pattern.test(id)){
+				zeroModal.alert("id只有数字哦");
+				return;
+		    }
+		    
+		    if(password==""){
+				zeroModal.alert("请输入密码");
+				return;
+		    }
+		    
+		    $.ajax({
+		            url: "/HotelBooking/login",
+		            type : "post",
+		            dateType:"json",
+		            contentType:"application/json",
+		            data : JSON.stringify({
+		                'id' : id,
+		              
+		                'password':password
+		            }),
+		            success : function(message){
+		                if(message.success==false)
+		                    zeroModal.error(message.message);
+		                else{
+		                    zeroModal.success("登录成功");
+		                    location.reload();
+		                }
+		                
+		                    
+		            },
+		           
+		            error : function(data){
+		                zeroModal.alert("系统错误");
+		            }
+		        })
+		    
+		    
+		}
+	
 		function register(){
+		    var name=$("input#name").val();
+		    var password=$("input#password").val();
+		    var phoneNumber=$("input#phoneNumber").val();
+		    var birthday=$("input#birthday").val();
+		    var company=$("input#company").val();
+		   
+		    if(name==""){
+				zeroModal.alert("请输入用户名");
+				return;
+		    }
+		    if(password==""){
+				zeroModal.alert("请输入密码");
+				return;
+		    }
+		    
+		    var pattern=/^1[0-9]{10}$/;
+		    if(phoneNumber!=""&&!pattern.test(phoneNumber)){
+				zeroModal.alert("请输入正确的手机号");
+				return;
+		    }
+	
+		    
 		    $.ajax({
 	            url: "/HotelBooking/client",
 	            type : "put",
 	            dateType:"json",
 	            contentType:"application/json",
 	            data : JSON.stringify({
-	                'name' : "RESTful",
-	                'phoneNumber' : "1234",
-	                'credit' : "3000",
-	                'birthday':"1",
-	                'company':"1",
-	                'password':"1"
+	                'name' : name,
+	                'phoneNumber' : phoneNumber,
+	                'birthday':birthday,
+	                'company':company,
+	                'password':password
 	            }),
 	            success : function(message){
 	                if(message.success==false)
-	                    alert(message.message);
+	                    zeroModal.error(message.message);
+	                else{
+	                    zeroModal.success("注册成功，您的id为"+message.message);
+	                    location.reload();
+	                    
+	                }
+	                
+	                    
 	            },
 	           
 	            error : function(data){
-	                alert("错误");
+	                zeroModal.alert("系统错误");
 	            }
 	        })
 		}

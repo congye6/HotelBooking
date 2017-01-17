@@ -22,7 +22,6 @@ public class ClientController {
 	
 	@RequestMapping(method=RequestMethod.PUT)
 	public @ResponseBody ResultMessage client(@RequestBody ClientVO vo){
-		System.out.println(vo.name);
 		ResultMessage message=clientBl.register(vo);
 		return message;
 	}

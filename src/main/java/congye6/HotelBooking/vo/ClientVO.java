@@ -70,7 +70,7 @@ public class ClientVO {
 			return message;
 		}
 		//如果填写了手机号，手机号码必须符合格式
-		if(StringUtil.isNull(phoneNumber)||StringUtil.isPhoneNumber(phoneNumber)){
+		if(!StringUtil.isNull(phoneNumber)&&!StringUtil.isPhoneNumber(phoneNumber)){
 			message.setMessage("请填写正确的手机号");
 			return message;
 		}

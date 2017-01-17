@@ -41,7 +41,9 @@ public class ClientBl implements ClientBlService{
 		po.setId(id);
 		po.setCredit(3000);//初始信用值为3000
 		mapper.addClient(po);
-		return new ResultMessage(true);
+		
+		ResultMessage message=new ResultMessage(true, id+"");
+		return message;
 	}
 
 	@Override
