@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class TemplateTestController {
 	
-	@RequestMapping("/client")
+	@RequestMapping("/clientTest")
 	public ModelAndView client(){
 		ModelAndView modelAndView=new ModelAndView();
 		modelAndView.setViewName("client/clientTemplate");

@@ -8,12 +8,12 @@
 		<title><congye6:block name="title"></congye6:block></title>
 		<congye6:block name="css">
 			<!-- Bootstrap core CSS -->
-		    <link href="assets/css/bootstrap.css" rel="stylesheet">
+		    <link href="/HotelBooking/assets/css/bootstrap.css" rel="stylesheet">
 		    <!--external css-->
-		    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+		    <link href="/HotelBooking/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 		    <!-- Custom styles for this template -->
-		    <link href="assets/css/style.css" rel="stylesheet">
-		    <link href="assets/css/style-responsive.css" rel="stylesheet">
+		    <link href="/HotelBooking/assets/css/style.css" rel="stylesheet">
+		    <link href="/HotelBooking/assets/css/style-responsive.css" rel="stylesheet">
 		</congye6:block>
 	</head>
 	<body>
@@ -292,15 +292,15 @@
 	
 		<congye6:block name="js">
 		 	<!-- js placed at the end of the document so the pages load faster -->
-		    <script src="assets/js/jquery.js"></script>
-		    <script src="assets/js/bootstrap.min.js"></script>
-		    <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
-		    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-		    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-		    <script src="assets/js/jquery.scrollTo.min.js"></script>
-		    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+		    <script src="/HotelBooking/assets/js/jquery.js"></script>
+		    <script src="/HotelBooking/assets/js/bootstrap.min.js"></script>
+		    <script src="/HotelBooking/assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+		    <script src="/HotelBooking/assets/js/jquery.ui.touch-punch.min.js"></script>
+		    <script class="include" type="text/javascript" src="/HotelBooking/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+		    <script src="/HotelBooking/assets/js/jquery.scrollTo.min.js"></script>
+		    <script src="/HotelBooking/assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 		    <!--common script for all pages-->
-		    <script src="assets/js/common-scripts.js"></script>
+		    <script src="/HotelBooking/assets/js/common-scripts.js"></script>
 		</congye6:block>
 		
 		<script>

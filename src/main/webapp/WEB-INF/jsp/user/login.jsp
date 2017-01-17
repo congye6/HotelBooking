@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -28,7 +29,7 @@
 	  <div id="login-page">
 	  	<div class="container">
 	  	
-		      <form class="form-login" action="index.html">
+		      <form:form class="form-login" action="index.html" method="put">
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">
 		            <input type="text" class="form-control" placeholder="User ID" autofocus>
@@ -50,7 +51,7 @@
 		            </div>
 		            <div class="registration">
 		                Don't have an account yet?<br/>
-		                <a class="" href="#">
+		                <a class=""  data-toggle="modal" data-target="#registerModal">
 		                    Create an account
 		                </a>
 		            </div>
@@ -78,8 +79,32 @@
 		              </div>
 		          </div>
 		          <!-- modal -->
+		          
+		          <!-- Modal -->
+		          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="registerModal" class="modal fade">
+		              <div class="modal-dialog">
+		                  <div class="modal-content">
+		                      <div class="modal-header">
+		                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                          <h4 class="modal-title">创建账号</h4>
+		                      </div>
+		                      <div class="modal-body">
+		                          <p>用户名</p>
+		                          <input type="text" name="name"   class="form-control placeholder-no-fix">
+		                          <p>密码</p>
+		                          <input type="password" name="password"   class="form-control placeholder-no-fix">
 		
-		      </form>	  	
+		                      </div>
+		                      <div class="modal-footer">
+		                          <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+		                          <button class="btn btn-theme" type="button" onclick="register()">Submit</button>
+		                      </div>
+		                  </div>
+		              </div>
+		          </div>
+		          <!-- modal -->
+		
+		      </form:form>	  	
 	  	
 	  	</div>
 	  </div>
@@ -97,4 +122,31 @@
 			
 	
 	</body>
+	
+	<script type="text/javascript">
+		function register(){
+		    $.ajax({
+	            url: "/HotelBooking/client",
+	            type : "put",
+	            dateType:"json",
+	            contentType:"application/json",
+	            data : JSON.stringify({
+	                'name' : "RESTful",
+	                'phoneNumber' : "1234",
+	                'credit' : "3000",
+	                'birthday':"1",
+	                'company':"1",
+	                'password':"1"
+	            }),
+	            success : function(message){
+	                if(message.success==false)
+	                    alert(message.message);
+	            },
+	           
+	            error : function(data){
+	                alert("错误");
+	            }
+	        })
+		}
+	</script>
 </html>
