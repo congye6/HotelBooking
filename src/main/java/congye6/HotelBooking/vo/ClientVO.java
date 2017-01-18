@@ -14,6 +14,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import congye6.HotelBooking.util.DateUtil;
 import congye6.HotelBooking.util.StringUtil;
+import congye6.HotelBooking.validator.annotation.PastDate;
 import jdk.internal.instrumentation.TypeMapping;
 
 /**
@@ -49,8 +50,7 @@ public class ClientVO {
 	/**
 	 * 
 	 */
-	@DateTimeFormat(pattern="yyyy-mm-dd")
-	@Past(message="{client.birthday.past}")
+	@PastDate(message="{client.birthday.past}")
 	public String birthday;
 	
 	public String company;
@@ -65,7 +65,7 @@ public class ClientVO {
 	 * @param phoneNumber
 	 * @param credit
 	 */
-	public ClientVO(int id, String name, String phoneNumber, int credit,String password,Date birthday) {
+	public ClientVO(int id, String name, String phoneNumber, int credit,String password,String birthday) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -74,31 +74,7 @@ public class ClientVO {
 		this.password=password;
 		this.birthday=birthday;
 	}
-	/**
-	 * 检验vo
-	 * @return
-	 * 2017年1月14日
-	 */
-	/*public ResultMessage validate(){
-		ResultMessage message=new ResultMessage(false);
-		if(StringUtil.isNull(name)||StringUtil.isNull(password)){
-			message.setMessage("请填写用户名和密码");
-			return message;
-		}
-		//如果填写了手机号，手机号码必须符合格式
-		if(!StringUtil.isNull(phoneNumber)&&!StringUtil.isPhoneNumber(phoneNumber)){
-			message.setMessage("请填写正确的手机号");
-			return message;
-		}
-		
-		if(!StringUtil.isDate(birthday)||!DateUtil.isBeforeDate(birthday)){
-			message.setMessage("请输入正确的生日");
-			return message;
-		}
-		
-		message.setSuccess(true);
-		return message;
-	}*/
+	
 	
 	/**
 	 * 
@@ -139,11 +115,11 @@ public class ClientVO {
 		this.credit = credit;
 	}
 
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(Date birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 

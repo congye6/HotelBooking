@@ -25,17 +25,9 @@ public class ClientBl implements ClientBlService{
 	
 	@Override
 	public ResultMessage register(ClientVO vo) {
-		
-		if(vo==null){
-			ResultMessage message=new ResultMessage(false);
-			message.setMessage("系统错误");
-			return message;
-		}
-		//检验vo
-		/*ResultMessage isValid=vo.validate();
-		if(!isValid.isSuccess())
-			return isValid; */
-		
+		//用户未填写生日时将其置为null
+		if(vo.birthday.length()==0)
+			vo.birthday=null;
 		ClientPO po=new ClientPO();
 		BeanUtils.copyProperties(vo, po);
 		//添加登录账号，获得注册的id

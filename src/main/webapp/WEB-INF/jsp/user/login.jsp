@@ -186,20 +186,20 @@
 		    var birthday=$("input#birthday").val();
 		    var company=$("input#company").val();
 		   
-// 		    if(name==""){
-// 				zeroModal.alert("请输入用户名");
-// 				return;
-// 		    }
-// 		    if(password==""){
-// 				zeroModal.alert("请输入密码");
-// 				return;
-// 		    }
+		    if(name==""){
+				zeroModal.alert("请输入用户名");
+				return;
+		    }
+		    if(password==""){
+				zeroModal.alert("请输入密码");
+				return;
+		    }
 		    
-// 		    var pattern=/^1[0-9]{10}$/;
-// 		    if(phoneNumber!=""&&!pattern.test(phoneNumber)){
-// 				zeroModal.alert("请输入正确的手机号");
-// 				return;
-// 		    }
+		    var pattern=/^1[0-9]{10}$/;
+		    if(phoneNumber!=""&&!pattern.test(phoneNumber)){
+				zeroModal.alert("请输入正确的手机号");
+				return;
+		    }
 	
 		    
 		    $.ajax({
