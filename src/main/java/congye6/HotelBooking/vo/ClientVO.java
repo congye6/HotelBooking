@@ -2,8 +2,19 @@ package congye6.HotelBooking.vo;
 
 
 
+import java.sql.Date;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import congye6.HotelBooking.util.DateUtil;
 import congye6.HotelBooking.util.StringUtil;
+import jdk.internal.instrumentation.TypeMapping;
 
 /**
  * 客户基本信息
@@ -21,11 +32,13 @@ public class ClientVO {
 	/**
 	 * 客户姓名
 	 */
+	@NotEmpty(message="{client.name.isNull}")
 	public String name;
 	
 	/**
 	 * 客户联系方式
 	 */
+	@Pattern(message="{phoneNumber}", regexp =StringUtil.PHONE_NUMBER_PATTERN)
 	public String phoneNumber;
 	
 	/**
@@ -36,10 +49,13 @@ public class ClientVO {
 	/**
 	 * 
 	 */
+	@DateTimeFormat(pattern="yyyy-mm-dd")
+	@Past(message="{client.birthday.past}")
 	public String birthday;
 	
 	public String company;
 	
+	@NotEmpty(message="{client.password.isNull}")
 	public String password;
 
 	
@@ -49,7 +65,7 @@ public class ClientVO {
 	 * @param phoneNumber
 	 * @param credit
 	 */
-	public ClientVO(int id, String name, String phoneNumber, int credit,String password,String birthday) {
+	public ClientVO(int id, String name, String phoneNumber, int credit,String password,Date birthday) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -63,7 +79,7 @@ public class ClientVO {
 	 * @return
 	 * 2017年1月14日
 	 */
-	public ResultMessage validate(){
+	/*public ResultMessage validate(){
 		ResultMessage message=new ResultMessage(false);
 		if(StringUtil.isNull(name)||StringUtil.isNull(password)){
 			message.setMessage("请填写用户名和密码");
@@ -82,7 +98,7 @@ public class ClientVO {
 		
 		message.setSuccess(true);
 		return message;
-	}
+	}*/
 	
 	/**
 	 * 
@@ -123,11 +139,11 @@ public class ClientVO {
 		this.credit = credit;
 	}
 
-	public String getBirthday() {
+	public Date getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(String birthday) {
+	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
 

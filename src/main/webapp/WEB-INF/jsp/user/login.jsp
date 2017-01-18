@@ -92,7 +92,7 @@
 		                          <p>用户名</p>
 		                          <input type="text" id="name"   class="form-control placeholder-no-fix">
 		                          <p>密码</p>
-		                          <input type="password" id="password"   class="form-control placeholder-no-fix">
+		                          <input type="password" id="password_register"   class="form-control placeholder-no-fix">
 								  <p>手机号</p>
 		                          <input type="text" id="phoneNumber"   class="form-control placeholder-no-fix">
 		                          <p>合作企业</p>
@@ -118,6 +118,7 @@
 	    <script src="/HotelBooking/assets/js/jquery.js"></script>
 	    <script src="/HotelBooking/assets/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="/HotelBooking/js/alert.js"></script>
+		<script type="text/javascript" src="/HotelBooking/js/cookie.js"></script>
 	    <!--BACKSTRETCH-->
 	    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
 	    <script type="text/javascript" src="/HotelBooking/assets/js/jquery.backstretch.min.js"></script>
@@ -163,6 +164,7 @@
 		                    zeroModal.error(message.message);
 		                else{
 		                    zeroModal.success("登录成功");
+		   
 		                    location.reload();
 		                }
 		                
@@ -179,25 +181,25 @@
 	
 		function register(){
 		    var name=$("input#name").val();
-		    var password=$("input#password").val();
+		    var password=$("input#password_register").val();
 		    var phoneNumber=$("input#phoneNumber").val();
 		    var birthday=$("input#birthday").val();
 		    var company=$("input#company").val();
 		   
-		    if(name==""){
-				zeroModal.alert("请输入用户名");
-				return;
-		    }
-		    if(password==""){
-				zeroModal.alert("请输入密码");
-				return;
-		    }
+// 		    if(name==""){
+// 				zeroModal.alert("请输入用户名");
+// 				return;
+// 		    }
+// 		    if(password==""){
+// 				zeroModal.alert("请输入密码");
+// 				return;
+// 		    }
 		    
-		    var pattern=/^1[0-9]{10}$/;
-		    if(phoneNumber!=""&&!pattern.test(phoneNumber)){
-				zeroModal.alert("请输入正确的手机号");
-				return;
-		    }
+// 		    var pattern=/^1[0-9]{10}$/;
+// 		    if(phoneNumber!=""&&!pattern.test(phoneNumber)){
+// 				zeroModal.alert("请输入正确的手机号");
+// 				return;
+// 		    }
 	
 		    
 		    $.ajax({

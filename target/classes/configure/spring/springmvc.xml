@@ -44,7 +44,7 @@
   	
   	<context:component-scan base-package="congye6.HotelBooking.controller" />
   	
-    <mvc:annotation-driven/>
+    
 	
 	<!--
 		配置视图解析器
@@ -57,6 +57,23 @@
 		<property name="suffix" value=".jsp" /> 
 		
 	</bean>
+	
+	<!-- spring mvc验证开始 ，若不使用这种配置，需要将错误信息硬编码到代码里，不易修改-->
+    <!-- 默认的注解映射的支持 -->  
+    <mvc:annotation-driven validator="validator" conversion-service="conversion-service" />
+    
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="providerClass"  value="org.hibernate.validator.HibernateValidator"/>
+        <!--不设置则默认为classpath下的 ValidationMessages.properties -->
+        <property name="validationMessageSource" ref="validatemessageSource"/>
+    </bean>
+    <bean id="conversion-service" class="org.springframework.format.support.FormattingConversionServiceFactoryBean" />
+    <bean id="validatemessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">  
+        <property name="basename" value="classpath:validatemessages"/>  
+        <property name="fileEncodings" value="utf-8"/>  
+        <property name="cacheSeconds" value="120"/>  
+    </bean>
+    <!-- spring mvc验证结束 -->
 	
 	<!-- 全局异常处理器 -->
 	<!--<bean  class="exception.CustomExceptionResolver"/>-->

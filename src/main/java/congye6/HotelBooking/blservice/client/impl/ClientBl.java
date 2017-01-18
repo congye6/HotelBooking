@@ -3,6 +3,8 @@ package congye6.HotelBooking.blservice.client.impl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 
 import congye6.HotelBooking.blservice.client.ClientBlService;
 import congye6.HotelBooking.blservice.user.AccountBlService;
@@ -30,9 +32,9 @@ public class ClientBl implements ClientBlService{
 			return message;
 		}
 		//检验vo
-		ResultMessage isValid=vo.validate();
+		/*ResultMessage isValid=vo.validate();
 		if(!isValid.isSuccess())
-			return isValid; 
+			return isValid; */
 		
 		ClientPO po=new ClientPO();
 		BeanUtils.copyProperties(vo, po);

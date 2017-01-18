@@ -5,6 +5,8 @@ import java.util.regex.Pattern;
 
 public class StringUtil {
 
+	public static final String PHONE_NUMBER_PATTERN="[1][0-9]{10}";
+	
 	/**
 	 * 检验字符串是否为null或者长度wei0
 	 * @param str
