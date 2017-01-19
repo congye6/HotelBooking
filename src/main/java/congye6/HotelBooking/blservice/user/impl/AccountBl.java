@@ -3,6 +3,8 @@ package congye6.HotelBooking.blservice.user.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sun.accessibility.internal.resources.accessibility_zh_CN;
+
 import congye6.HotelBooking.blservice.user.AccountBlService;
 import congye6.HotelBooking.enumeration.UserType;
 import congye6.HotelBooking.mapper.user.AccountMapper;
@@ -18,10 +20,7 @@ public class AccountBl implements AccountBlService{
 	@Override
 	public ResultMessage login(int id, String password) {
 		ResultMessage message=new ResultMessage(false);
-		if(password==null||password.length()==0){
-			message.setMessage("密码不能为空");
-			return message;
-		}
+		
 		
 		AccountPO account=mapper.getAccount(id);
 		if(account==null){
@@ -48,7 +47,8 @@ public class AccountBl implements AccountBlService{
 		AccountPO account=mapper.getAccount(id);
 		if(account==null)
 			return UserType.UNKNOW;
-		
+		if(!account.getPassword().equals(password))
+			return UserType.UNKNOW;
 		
 		return UserType.valueOf(account.getType());
 	}

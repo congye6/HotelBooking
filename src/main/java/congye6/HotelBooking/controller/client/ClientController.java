@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import congye6.HotelBooking.blservice.client.ClientBlService;
 import congye6.HotelBooking.vo.ClientVO;
@@ -22,6 +23,16 @@ public class ClientController {
 	@Autowired
 	private ClientBlService clientBl;
 	
+	/**
+	 * 返回客户页面
+	 * @param id
+	 * @return
+	 * 2017年1月19日
+	 */
+	public ModelAndView index(int id){
+		ModelAndView modelAndView=new ModelAndView("client/client");
+		return modelAndView;
+	}
 	
 	@RequestMapping(method=RequestMethod.PUT)
 	public @ResponseBody ResultMessage client(@RequestBody @Validated ClientVO vo,BindingResult validateResult){

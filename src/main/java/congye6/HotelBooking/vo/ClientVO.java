@@ -1,21 +1,11 @@
 package congye6.HotelBooking.vo;
 
-
-
-import java.sql.Date;
-
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import congye6.HotelBooking.util.DateUtil;
 import congye6.HotelBooking.util.StringUtil;
 import congye6.HotelBooking.validator.annotation.PastDate;
-import jdk.internal.instrumentation.TypeMapping;
 
 /**
  * 客户基本信息

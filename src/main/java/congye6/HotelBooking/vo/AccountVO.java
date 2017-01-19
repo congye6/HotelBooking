@@ -1,5 +1,7 @@
 package congye6.HotelBooking.vo;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import congye6.HotelBooking.enumeration.UserType;
 
 /**
@@ -13,6 +15,7 @@ public class AccountVO {
 	
 	public int id;
 	
+	@NotEmpty(message="{client.password.isNull}")
 	public String password;
 	
 	/**
