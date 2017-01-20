@@ -203,7 +203,7 @@
 	
 		    
 		    $.ajax({
-	            url: "/HotelBooking/client",
+	            url: "/HotelBooking/client/add",
 	            type : "put",
 	            dateType:"json",
 	            contentType:"application/json",

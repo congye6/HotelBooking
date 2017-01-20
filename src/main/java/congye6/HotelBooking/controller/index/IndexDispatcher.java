@@ -4,6 +4,8 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 import congye6.HotelBooking.controller.client.ClientController;
 import congye6.HotelBooking.enumeration.UserType;
 
@@ -14,18 +16,16 @@ import congye6.HotelBooking.enumeration.UserType;
  * 2017年1月19日
  */
 public class IndexDispatcher {
-	
-	private static final Map<UserType,Method> CONTROLLER_MAP=new HashMap<>();
+	/**
+	 * 用户身份映射到不同用户主页的url
+	 */
+	private static final Map<UserType,String> INDEX_URL_MAP=new HashMap<>();
 	static{
-		try {
-			CONTROLLER_MAP.put(UserType.CLIENT, ClientController.class.getMethod("index", int.class));
-		} catch (NoSuchMethodException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		INDEX_URL_MAP.put(UserType.CLIENT, "/client");
+	}
+	
+	public String getUrl(UserType type){
+		return INDEX_URL_MAP.get(type);
 	}
 
 }

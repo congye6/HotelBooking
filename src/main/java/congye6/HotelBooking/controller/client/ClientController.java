@@ -29,12 +29,13 @@ public class ClientController {
 	 * @return
 	 * 2017年1月19日
 	 */
-	public ModelAndView index(int id){
+	@RequestMapping(method=RequestMethod.GET)
+	public ModelAndView index(){
 		ModelAndView modelAndView=new ModelAndView("client/client");
 		return modelAndView;
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT)
+	@RequestMapping(value="/add",method=RequestMethod.PUT)
 	public @ResponseBody ResultMessage client(@RequestBody @Validated ClientVO vo,BindingResult validateResult){
 		if(validateResult.hasErrors()){
 			List<ObjectError> errors=validateResult.getAllErrors();

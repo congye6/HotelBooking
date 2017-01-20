@@ -8,4 +8,4 @@
 
 
 
-<jsp:include page="/WEB-INF/jsp/template.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/jsp/client/clientTemplate.jsp"></jsp:include>
