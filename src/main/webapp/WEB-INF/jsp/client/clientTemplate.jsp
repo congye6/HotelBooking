@@ -3,7 +3,6 @@
 <%@taglib uri="/congye6"  prefix="congye6"%>
 
 
-<congye6:override name="title">用户界面模板</congye6:override>
 
 <congye6:override name="sidebar">
 	<li class="mt">

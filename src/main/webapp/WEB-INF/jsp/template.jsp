@@ -171,7 +171,7 @@
 		            </div>
 		            <div class="top-menu">
 		            	<ul class="nav pull-right top-menu">
-		                    <li><a class="logout" href="login.html">Logout</a></li>
+		                    <li><a class="logout" href="/HotelBooking/loginPage">Logout</a></li>
 		            	</ul>
 		            </div>
 		        </header>
@@ -187,7 +187,7 @@
 		              <ul class="sidebar-menu" id="nav-accordion">
 		              
 		              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-		              	  <h5 class="centered">Marcel Newman</h5>
+		              	  <h5 class="centered" id="userName">Marcel Newman</h5>
 		              	  <congye6:block name="sidebar" override="true">	
 		                  <li class="mt">
 		                      <a href="index.html">
@@ -301,12 +301,13 @@
 		    <script src="/HotelBooking/assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 		    <!--common script for all pages-->
 		    <script src="/HotelBooking/assets/js/common-scripts.js"></script>
+		    
+		    <script src="/HotelBooking/js/cookie.js"></script>
 		</congye6:block>
 		
 		<script>
 		      //custom select box
 		      $(function(){
-		          customSelect();
 		          showUserInfo();
 		      });
 		      
@@ -321,6 +322,11 @@
 		        $('li.sub-menu ul').eq(indexOfSuper).css('display','block');
 // 		          {{--highlight sub menu--}}
 		        $('li.sub-menu ul.sub li').eq(indexOfSub-1).addClass('active');
+		      }
+		      
+		      function setSelectMainMenu(indexOfSuper){
+// 		          highlight main menu
+			      $('li.sub-menu > a').eq(indexOfSuper).addClass('active');
 		      }
 		  </script>
 </body>

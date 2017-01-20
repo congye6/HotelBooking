@@ -21,7 +21,7 @@ public class IndexDispatcher {
 	 */
 	private static final Map<UserType,String> INDEX_URL_MAP=new HashMap<>();
 	static{
-		INDEX_URL_MAP.put(UserType.CLIENT, "/client");
+		INDEX_URL_MAP.put(UserType.CLIENT, "/client/index");
 	}
 	
 	public String getUrl(UserType type){

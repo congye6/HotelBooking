@@ -11,9 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 
 public class CookieHelper {
+	public static final String ID="id";
 	public static final String USER_NAME="userName";
 	public static final String PASSWORD="password";
-	public static final String IS_LIKE="isLike";
+	
 
 	/**
 	 * Cookie的实现  

@@ -17,7 +17,8 @@ import congye6.HotelBooking.blservice.client.ClientBlService;
 import congye6.HotelBooking.vo.ClientVO;
 import congye6.HotelBooking.vo.ResultMessage;
 
-@Controller("/client")
+@Controller
+@RequestMapping("/client")
 public class ClientController {
 	
 	@Autowired
@@ -29,13 +30,13 @@ public class ClientController {
 	 * @return
 	 * 2017年1月19日
 	 */
-	@RequestMapping(method=RequestMethod.GET)
+	@RequestMapping(value="/index",method=RequestMethod.GET)
 	public ModelAndView index(){
-		ModelAndView modelAndView=new ModelAndView("client/client");
+		ModelAndView modelAndView=new ModelAndView("client/selectHotel");
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/add",method=RequestMethod.PUT)
+	@RequestMapping(method=RequestMethod.PUT)
 	public @ResponseBody ResultMessage client(@RequestBody @Validated ClientVO vo,BindingResult validateResult){
 		if(validateResult.hasErrors()){
 			List<ObjectError> errors=validateResult.getAllErrors();

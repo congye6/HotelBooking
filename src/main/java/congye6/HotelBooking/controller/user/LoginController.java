@@ -44,7 +44,7 @@ public class LoginController {
 		
 		ResultMessage message=accountBl.login(vo.id, vo.password);
 		if(message.isSuccess()){
-			CookieHelper.addCookie(CookieHelper.USER_NAME, vo.id+"", response, request);
+			CookieHelper.addCookie(CookieHelper.ID, vo.id+"", response, request);
 			CookieHelper.addCookie(CookieHelper.PASSWORD, vo.password, response, request);
 		}
 			
