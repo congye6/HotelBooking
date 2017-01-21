@@ -1,5 +1,7 @@
 package congye6.HotelBooking.vo;
 
+import org.hibernate.validator.constraints.Range;
+
 /**
  * @author congye6
  * 2016年12月24日
@@ -9,6 +11,7 @@ public class CreditLevelVO {
 	/**
 	 * vip等级
 	 */
+	@Range(min=1,max=30,message="{creditLevel.level.range}")
 	public int level;
 	
 	/**

@@ -1,5 +1,10 @@
 package congye6.HotelBooking.vo;
 
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
+
 /**
  * 评论
  * @author congye6
@@ -10,19 +15,23 @@ public class CommentVO {
 	/**
 	 * 评论人
 	 */
+	@Min(value=1,message="{userId.min}")
 	public int userId;
 	
 	/**
 	 * 酒店id
 	 */
+	@Min(value=1,message="{hotelId.min}")
 	public int hotelId;
 	
+	@NotEmpty(message="{comment.null}")
 	public String comment;
 	
 	/**
 	 * 评分
 	 * 1-5星
 	 */
+	@Range(min=1,max=5,message="{comment.score.range}")
 	public int score;
 
 	/**

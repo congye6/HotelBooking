@@ -11,7 +11,7 @@ public class DateUtil {
 	 * @return
 	 * 2017年1月15日
 	 */
-	public static boolean isBeforeDate(String str){
+	public static boolean isPastDate(String str){
 		//不符合格式
 		if(!StringUtil.isDate(str))
 			return false;
@@ -20,6 +20,23 @@ public class DateUtil {
 			return false;
 		Date today=new Date();
 		return today.after(date);
+	}
+	
+	/**
+	 * 是否为未来时间
+	 * @param str
+	 * @return
+	 * 2017年1月20日
+	 */
+	public static boolean isFutureDate(String str){
+		//不符合格式
+		if(!StringUtil.isDate(str))
+			return false;
+		Date date=getDate(str);
+		if(date==null)
+			return false;
+		Date today=new Date();
+		return today.before(date);
 	}
 	
 	/**

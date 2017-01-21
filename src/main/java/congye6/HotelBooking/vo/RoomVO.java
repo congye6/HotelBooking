@@ -1,5 +1,7 @@
 package congye6.HotelBooking.vo;
 
+import javax.validation.constraints.Min;
+
 import congye6.HotelBooking.enumeration.RoomType;
 
 /**
@@ -12,6 +14,7 @@ public class RoomVO {
 	/**
 	 * 所属酒店
 	 */
+	@Min(value=1,message="{hotelId.min}")
 	public int hotelId;
 	
 	/**
@@ -22,11 +25,13 @@ public class RoomVO {
 	/**
 	 * 房间数量
 	 */
+	@Min(value=0,message="{room.number.min}")
 	public int number;
 	
 	/**
 	 * 价格
 	 */
+	@Min(value=1,message="{room.price.min}")
 	public double price;
 
 	/**

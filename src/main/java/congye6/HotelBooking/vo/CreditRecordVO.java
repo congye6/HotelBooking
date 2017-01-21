@@ -1,5 +1,7 @@
 package congye6.HotelBooking.vo;
 
+import javax.validation.constraints.Min;
+
 import congye6.HotelBooking.enumeration.CreditOperation;
 
 /**
@@ -13,6 +15,7 @@ public class CreditRecordVO {
 	/**
 	 * user id
 	 */
+	@Min(value=1,message="userId.min")
 	public int userId;
 
 	/**

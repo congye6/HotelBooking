@@ -5,25 +5,21 @@ import javax.validation.ConstraintValidatorContext;
 
 import congye6.HotelBooking.util.DateUtil;
 import congye6.HotelBooking.util.StringUtil;
-import congye6.HotelBooking.validator.annotation.PastDate;
+import congye6.HotelBooking.validator.annotation.FutureDate;
 
-public class PastDateValidator implements ConstraintValidator<PastDate, String>{
+public class FutureDateValidator implements ConstraintValidator<FutureDate, String>{
 
 	@Override
-	public void initialize(PastDate arg0) {
-		// TODO Auto-generated method stub
+	public void initialize(FutureDate arg0) {
+		
 		
 	}
 
 	@Override
-	/**
-	 * 允许为null
-	 * 必须符合格式yyyy-mm-dd
-	 */
 	public boolean isValid(String date, ConstraintValidatorContext arg1) {
 		if(StringUtil.isNull(date))
 			return true;
-		if(!DateUtil.isPastDate(date))
+		if(!DateUtil.isFutureDate(date))
 			return false;
 		return true;
 	}

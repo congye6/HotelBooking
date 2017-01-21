@@ -1,5 +1,8 @@
 package congye6.HotelBooking.vo;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
+
 /**
  * 酒店基本信息
  * @author congye6
@@ -15,6 +18,7 @@ public class HotelVO {
 	/**
 	 * 酒店名称
 	 */
+	@NotEmpty(message="{hotel.name.null}")
 	public String name;
 	
 	/**
@@ -25,11 +29,13 @@ public class HotelVO {
 	/**
 	 * 所属城市
 	 */
+	@NotEmpty(message="{hotel.city.null}")
 	public String city;
 	
 	/**
 	 * 所属商圈
 	 */
+	@NotEmpty(message="{hotel.circle.null}")
 	public String circle;
 	
 	/**
@@ -40,5 +46,6 @@ public class HotelVO {
 	/**
 	 * 酒店星级
 	 */
+	@Range(min=0 ,max=6, message="{hotel.star.range}")
 	public int star;
 }

@@ -1,5 +1,9 @@
 package congye6.HotelBooking.vo;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+import congye6.HotelBooking.validator.annotation.FutureDate;
+
 /**
  * @author congye6
  * 2016年12月21日
@@ -9,16 +13,22 @@ public class CheckInVO {
 	/**
 	 * 入住时间
 	 */
+	@NotEmpty(message="{checkin.startDate.null}")
+	@FutureDate(message="{checkin.startDate.future}")
 	public String startDate;
 	
 	/**
 	 * 退房时间
 	 */
+	@NotEmpty(message="{checkin.endDate.null}")
+	@FutureDate(message="{checkin.endDate.future}")
 	public String endDate;
 	
 	/**
 	 * 最晚执行时间
 	 */
+	@NotEmpty(message="{checkin.deadline.null}")
+	@FutureDate(message="{checkin.deadline.future}")
 	public String deadline;
 
 	/**

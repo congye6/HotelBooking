@@ -3,8 +3,13 @@ package congye6.HotelBooking.vo;
 
 import java.util.Map;
 
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.Range;
+
 import congye6.HotelBooking.enumeration.OrderState;
 import congye6.HotelBooking.enumeration.RoomType;
+import congye6.HotelBooking.validator.annotation.RangeDouble;
 
 /**
  * @author congye6
@@ -18,6 +23,7 @@ public class OrderVO {
 	/**
 	 * 订单用户id
 	 */
+	@Min(value=1,message="{userId.min}")
 	public int userId;
 	
 	/**
@@ -29,6 +35,7 @@ public class OrderVO {
 	/**
 	 * 酒店id
 	 */
+	@Min(value=1,message="{hotelId.min}")
 	public int hotelId;
 	
 	/**
@@ -36,6 +43,7 @@ public class OrderVO {
 	 */
 	public Map<RoomType,Integer> roomOrder;
 	
+	@RangeDouble(min=1,max=1000000,message="{order.price.range}")
 	public double price;
 	
 	public OrderState orderState;
@@ -43,6 +51,7 @@ public class OrderVO {
 	/**
 	 * 预计入住人数
 	 */
+	@Range(min=1,max=1000,message="{order.people.range}")
 	public int numberOfPeople;
 	
 	/**

@@ -11,8 +11,8 @@ public class DateUtilTest {
 	
 	@Test
 	public void isBeforeDate(){
-		assertEquals(true,DateUtil.isBeforeDate("1998-11-11"));
-		assertEquals(false, DateUtil.isBeforeDate("1998-14-11"));
-		assertEquals(false, DateUtil.isBeforeDate("2998-11-11"));
+		assertEquals(true,DateUtil.isPastDate("1998-11-11"));
+		assertEquals(false, DateUtil.isPastDate("1998-14-11"));
+		assertEquals(false, DateUtil.isPastDate("2998-11-11"));
 	}
 }
