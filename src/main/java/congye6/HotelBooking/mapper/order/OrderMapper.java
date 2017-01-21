@@ -37,6 +37,14 @@ public interface OrderMapper {
 	public void updateOrderDate(CheckInPO po);
 	
 	/**
+	 * 根据id获取订单信息
+	 * @param orderId
+	 * @return
+	 * 2017年1月21日
+	 */
+	public OrderPO getOrderById(int orderId);
+	
+	/**
 	 * 根据用户id获取具体状态的订单
 	 * @author congye6
 	 * @param userId

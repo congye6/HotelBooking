@@ -21,6 +21,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where id=#{orderId}
 	</update>
 	
+	<select id="getOrderById" parameterType="int" resultType="OrderPO">
+		select * from `order` where id=#{id}
+	</select>
+	
 	<select id="getOrdersByUser" resultType="OrderPO">
 		select * from `order` where userId=#{userId} and `state`=#{state}
 	</select>

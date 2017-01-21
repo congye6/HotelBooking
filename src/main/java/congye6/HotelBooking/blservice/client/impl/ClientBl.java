@@ -42,14 +42,20 @@ public class ClientBl implements ClientBlService{
 
 	@Override
 	public ResultMessage modifyClientInfo(ClientVO vo) {
-		// TODO Auto-generated method stub
-		return null;
+		ClientPO po=new ClientPO();
+		BeanUtils.copyProperties(vo, po);
+		mapper.updateClient(po);
+		return new ResultMessage(true);
 	}
 
 	@Override
 	public ClientVO getClientInfo(int userId) {
-		// TODO Auto-generated method stub
-		return null;
+		ClientPO po=mapper.getClient(userId);
+		if(po==null)
+			return null;
+		ClientVO vo=new ClientVO();
+		BeanUtils.copyProperties(po, vo);
+		return vo;
 	}
 
 }

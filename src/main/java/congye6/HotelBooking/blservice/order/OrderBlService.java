@@ -13,6 +13,7 @@ import congye6.HotelBooking.vo.ResultMessage;
  * 下午6:29:04
  */
 public interface OrderBlService {
+	
 	/**
 	 * 预订酒店
 	 * 前置：酒店房间数足够
@@ -32,6 +33,13 @@ public interface OrderBlService {
 	 */
 	public ResultMessage updateOrder(int orderId,CheckInVO checkInVO);
 	
+	/**
+	 * 根据id获得订单信息
+	 * @param orderId
+	 * @return
+	 * 2017年1月21日
+	 */
+	public OrderVO getOrderById(int orderId);
 	
 	/**
 	 * 根据用户id获取具体状态的订单

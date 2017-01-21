@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateUtil {
+	private static final String FORMAT="yyyy-mm-dd";
 
 	/**
 	 * 是否为过去的日期
@@ -40,6 +41,17 @@ public class DateUtil {
 	}
 	
 	/**
+	 * 获得今天日期
+	 * 格式yyyy-mm-dd
+	 * @return
+	 * 2017年1月21日
+	 */
+	public static String getToday(){
+		Date today=new Date();
+		return toStr(today);
+	}
+	
+	/**
 	 * 根据字符串获取date
 	 * 格式yyyy-MM-dd
 	 * @param str
@@ -47,7 +59,7 @@ public class DateUtil {
 	 * 2017年1月15日
 	 */
 	public static Date getDate(String str){
-		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat sdf=new SimpleDateFormat(FORMAT);
 		sdf.setLenient(false); //是否是严格的匹配
 		Date date=null;
 		try {
@@ -56,5 +68,17 @@ public class DateUtil {
 			e.printStackTrace();
 		}
 		return date;
+	}
+	
+	/**
+	 * 将date转换为字符串
+	 * 格式yyyy-mm-dd
+	 * @param date
+	 * @return
+	 * 2017年1月21日
+	 */
+	public static String toStr(Date date){
+		SimpleDateFormat sdf=new SimpleDateFormat(FORMAT);
+		return sdf.format(date);
 	}
 }
