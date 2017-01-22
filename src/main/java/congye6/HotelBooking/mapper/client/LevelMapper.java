@@ -3,15 +3,11 @@ package congye6.HotelBooking.mapper.client;
 import congye6.HotelBooking.po.LevelPO;
 
 public interface LevelMapper {
-	/**
-	 * 初始化等级所需的信用值
-	 * @param po
-	 * 2017年1月7日
-	 */
-	public void addLevel(LevelPO po);
+	
 	
 	/**
-	 * 
+	 * level存在则更新
+	 * 不存在则插入
 	 * @param po
 	 * 2017年1月7日
 	 */

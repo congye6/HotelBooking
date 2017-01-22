@@ -7,6 +7,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getHotels" resultType="HotelPO">
 		select * from hotel where city=#{city} and circle=#{circle}
 	</select>
+	
+	<select id="getHotel" parameterType="int" resultType="HotelPO">
+		select * from hotel where id=#{id}
+	</select>
 
 	<insert id="addHotel" parameterType="HotelPO">
 		<selectKey resultType="int" keyProperty="id" order="AFTER">

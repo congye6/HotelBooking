@@ -34,7 +34,7 @@ public interface ClientMapper {
 	 * @param credit 减少的信用值
 	 * 2017年1月5日
 	 */
-	public void minusCredit(@Param("id")int id,@Param("credit")double credit);
+	public int minusCredit(@Param("id")int id,@Param("credit")double credit);
 	
 	/**
 	 * 增加信用值
@@ -42,6 +42,6 @@ public interface ClientMapper {
 	 * @param credit 增加的信用值
 	 * 2017年1月5日
 	 */
-	public void addCredit(@Param("id")int id,@Param("credit")double credit);
+	public int addCredit(@Param("id")int id,@Param("credit")double credit);
 	
 }

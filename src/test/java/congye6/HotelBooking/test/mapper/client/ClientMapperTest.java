@@ -1,5 +1,7 @@
 package congye6.HotelBooking.test.mapper.client;
 
+import static org.junit.Assert.*;
+
 import java.sql.Date;
 
 import org.junit.Before;
@@ -40,7 +42,8 @@ public class ClientMapperTest {
 	
 	@Test
 	public void minusCredit(){
-		mapper.minusCredit(6,1);
+		int i=mapper.minusCredit(6,1);
+		assertEquals(i,1);
 	}
 	
 	@Test

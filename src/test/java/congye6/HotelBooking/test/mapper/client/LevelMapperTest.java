@@ -21,19 +21,7 @@ public class LevelMapperTest {
 		mapper=context.getBean(LevelMapper.class);
 	}
 	
-	@Test
-	public void addLevel(){
-		LevelPO level1=new LevelPO(1, -9999999, 999);
-		LevelPO level2=new LevelPO(2, 1000, 1999);
-		LevelPO level3=new LevelPO(3, 2000, 2999);
-		LevelPO level4=new LevelPO(4, 3000, 3999);
-		LevelPO level5=new LevelPO(5, 4000, 9999999);
-		mapper.addLevel(level1);
-		mapper.addLevel(level2);
-		mapper.addLevel(level3);
-		mapper.addLevel(level4);
-		mapper.addLevel(level5);
-	}
+	
 	
 	@Test
 	public void getLevel(){
@@ -43,7 +31,7 @@ public class LevelMapperTest {
 	
 	@Test
 	public void updateLevel(){
-		LevelPO po=new LevelPO(1, -9999998, 999);
+		LevelPO po=new LevelPO(1, -9999990, 999);
 		mapper.updateLevel(po);
 	}
 }

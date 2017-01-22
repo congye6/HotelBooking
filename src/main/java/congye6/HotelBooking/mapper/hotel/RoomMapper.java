@@ -20,11 +20,13 @@ public interface RoomMapper {
 	
 	/**
 	 * 录入可用客房
+	 * 存在时则更新
+	 * 不存在则插入
 	 * @author congye6
 	 * @param vo
 	 * @return
 	 */
-	public void addRoomInfo(RoomPO po);
+	public void updateRoomInfo(RoomPO po);
 	
 	/**
 	 * 预订客房后，房间数减一

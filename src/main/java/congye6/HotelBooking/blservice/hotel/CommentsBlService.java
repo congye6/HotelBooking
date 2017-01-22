@@ -25,7 +25,7 @@ public interface CommentsBlService {
 	 * @param hotelId
 	 * @return
 	 */
-	public double getScore(String hotelId);
+	public double getScore(int hotelId);
 	
 	/**
 	 * 获取酒店的评论

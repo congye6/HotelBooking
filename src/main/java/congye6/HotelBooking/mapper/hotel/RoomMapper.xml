@@ -8,9 +8,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from `room` where hotelId=#{value}
 	</select>
 	
-	<insert id="addRoomInfo" parameterType="RoomPO">
+	<insert id="updateRoomInfo" parameterType="RoomPO">
 		insert into `room`(hotelId,`type`,price,number)
 		value(#{hotelId},#{type},#{price},#{number})
+		ON DUPLICATE KEY UPDATE
+		price=#{price},number=#{number}
 	</insert>
 	
 	<update id="minusRoom">

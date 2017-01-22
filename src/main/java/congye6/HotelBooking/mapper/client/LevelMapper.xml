@@ -4,13 +4,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="congye6.HotelBooking.mapper.client.LevelMapper">
-	<insert id="addLevel" parameterType="LevelPO">
-		insert into `level`(`level`,lowCredit,highCredit) value(#{level},#{lowCredit},#{highCredit})
-	</insert>
 	
-	<update id="updateLevel" parameterType="LevelPO">
-	  	update `level` set lowCredit=#{lowCredit},highCredit=#{highCredit} where level=#{level}
-	</update>
+	
+	<insert id="updateLevel" parameterType="LevelPO">
+	  	insert into `level`(lowCredit,highCredit,level) 
+	  	value(#{lowCredit},#{highCredit},#{level})
+	  	<!-- 主键存在时更新 -->
+		ON DUPLICATE KEY UPDATE
+	  	lowCredit=#{lowCredit},highCredit=#{highCredit}
+	</insert>
 	
 	<select id="getLevel" parameterType="int" resultType="int">
 		select `level` from `level` where #{value}&gt;=lowCredit and #{value}&lt;=highCredit

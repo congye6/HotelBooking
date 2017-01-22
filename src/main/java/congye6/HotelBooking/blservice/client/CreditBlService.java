@@ -29,7 +29,7 @@ public interface CreditBlService {
 	 * @param money
 	 * @return
 	 */
-	public ResultMessage exceptionOrder(int orderId,double money);
+	public ResultMessage exceptionOrder(int userId,int orderId,double money);
 	
 	/**
 	 * 完成入住的订单可以增加等于订单额的信用值
@@ -39,13 +39,13 @@ public interface CreditBlService {
 	 * @param money
 	 * @return
 	 */
-	public ResultMessage successOrder(int orderId,double money);
+	public ResultMessage successOrder(int userId,int orderId,double money);
 	
 	/**
 	 * 充值信用值=money*100
 	 * 操作后添加使用记录
 	 */
-	public ResultMessage recharge(double money);
+	public ResultMessage recharge(int userId,double money);
 	
 	/**
 	 * 根据用户名查找信用使用记录

@@ -11,12 +11,12 @@ public class CreditRecordPO {
 	/**
 	 * 日期
 	 */
-	private Date date;
+	private String date;
 	
 	/**
 	 * 订单编号
 	 */
-	private String orderId;
+	private int orderId;
 	
 	/**
 	 * 信用操作
@@ -26,15 +26,17 @@ public class CreditRecordPO {
 	/**
 	 * 改变的信用值
 	 */
-	private int change;
+	private double change;
 	
 	/**
 	 * 改变后的信用值
 	 */
-	private int currentCredit;
+	private double currentCredit;
 
-	public CreditRecordPO(int userId, Date date, String orderId, String operation, int change,
-			int currentCredit) {
+	
+
+	public CreditRecordPO(int userId, String date, int orderId, String operation, double change,
+			double currentCredit) {
 		super();
 		this.userId = userId;
 		this.date = date;
@@ -56,19 +58,19 @@ public class CreditRecordPO {
 		this.userId = userId;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
-	public String getOrderId() {
+	public int getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(String orderId) {
+	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
 
@@ -80,19 +82,19 @@ public class CreditRecordPO {
 		this.operation = operation;
 	}
 
-	public int getChange() {
+	public double getChange() {
 		return change;
 	}
 
-	public void setChange(int change) {
+	public void setChange(double change) {
 		this.change = change;
 	}
 
-	public int getCurrentCredit() {
+	public double getCurrentCredit() {
 		return currentCredit;
 	}
 
-	public void setCurrentCredit(int currentCredit) {
+	public void setCurrentCredit(double currentCredit) {
 		this.currentCredit = currentCredit;
 	}
 	

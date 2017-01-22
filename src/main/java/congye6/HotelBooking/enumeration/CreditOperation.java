@@ -6,24 +6,8 @@ package congye6.HotelBooking.enumeration;
  * 下午3:31:29
  */
 public enum CreditOperation {
-	ORDER_EXCUTE(){
-		public String toString(){
-			return "订单执行";
-		}
-	},
-	ORDER_EXCEPTION(){
-		public String toString(){
-			return "订单异常";
-		}
-	},
-	ORDER_CANCEL(){
-		public String toString(){
-			return "订单撤销";
-		}
-	},
-	RECHARGE(){
-		public String toString(){
-			return "充值";
-		}
-	}
+	ORDER_EXCUTE,
+	ORDER_EXCEPTION,
+	ORDER_CANCEL,
+	RECHARGE
 }

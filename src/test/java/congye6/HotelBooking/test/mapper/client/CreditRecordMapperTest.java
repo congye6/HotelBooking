@@ -23,7 +23,7 @@ public class CreditRecordMapperTest {
 	
 	@Test
 	public void addCreditRecord(){
-		CreditRecordPO po=new CreditRecordPO(6, Date.valueOf("2016-11-11"), "1", "订单执行", 10, 3009);
+		CreditRecordPO po=new CreditRecordPO(6, "2016-11-11", 1, "ORDER_EXCUTE", 10, 3009);
 		mapper.addCreditRecord(po);
 	}
 	

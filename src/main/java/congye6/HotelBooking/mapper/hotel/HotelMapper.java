@@ -7,6 +7,15 @@ import org.apache.ibatis.annotations.Param;
 import congye6.HotelBooking.po.HotelPO;
 
 public interface HotelMapper {
+	
+	/**
+	 * 根据酒店id获取酒店信息
+	 * @param hotelId
+	 * @return
+	 * 2017年1月22日
+	 */
+	public HotelPO getHotel(int hotelId);
+	
 	/**
 	 * 根据城市和商圈查找酒店
 	 * @author congye6
