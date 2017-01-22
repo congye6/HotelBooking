@@ -3,6 +3,7 @@ package congye6.HotelBooking.blservice.hotel;
 import java.util.List;
 import java.util.Map;
 
+import congye6.HotelBooking.vo.ConditionVO;
 import congye6.HotelBooking.vo.HotelVO;
 import congye6.HotelBooking.vo.ResultMessage;
 
@@ -31,7 +32,7 @@ public interface HotelBlService {
 	 * @param conditions
 	 * @return
 	 */
-	public List<HotelVO> getHotels(String city,String commecialCircle,Map<String,?> conditions);
+	public List<HotelVO> getHotels(String city,String commecialCircle,List<ConditionVO<?>> conditions);
 	
 	/**
 	 * 管理员添加酒店

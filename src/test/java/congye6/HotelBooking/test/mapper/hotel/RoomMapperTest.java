@@ -25,8 +25,7 @@ public class RoomMapperTest {
 	
 	@Test
 	public void addRoomInfo(){
-		RoomPO po=new RoomPO(1, "suit", 12, 2000);
-		mapper.addRoomInfo(po);
+		;
 	}
 	
 	@Test
