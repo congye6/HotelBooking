@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="congye6.HotelBooking.mapper.hotel.RoomNumberMapper">
+	<select id="getNumber" resultType="int">
+		select `number` from `room` where hotelId=#{hotelId} and `type`=#{type}
+	</select>
+	
+	<select id="getCheckOutNumber" resultType="int">
+		select sum(`number`) from `order` o,order_room r where id=orderId and endDate&lt;=#{date}
+		and `type`=#{type} and hotelId=#{hotelId} and (`state`='SUCCESS' OR state='BOOKING')
+	</select>
+</mapper>
