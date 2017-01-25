@@ -2,6 +2,9 @@ package congye6.HotelBooking.vo;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
+import org.springframework.beans.BeanUtils;
+
+import congye6.HotelBooking.po.HotelPO;
 
 /**
  * 酒店基本信息
@@ -48,4 +51,68 @@ public class HotelVO {
 	 */
 	@Range(min=0 ,max=6, message="{hotel.star.range}")
 	public int star;
+	
+	public HotelVO(){
+		
+	}
+	
+	public HotelVO(HotelPO po){
+		BeanUtils.copyProperties(po, this);
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getCircle() {
+		return circle;
+	}
+
+	public void setCircle(String circle) {
+		this.circle = circle;
+	}
+
+	public String getIntroduction() {
+		return introduction;
+	}
+
+	public void setIntroduction(String introduction) {
+		this.introduction = introduction;
+	}
+
+	public int getStar() {
+		return star;
+	}
+
+	public void setStar(int star) {
+		this.star = star;
+	}
 }

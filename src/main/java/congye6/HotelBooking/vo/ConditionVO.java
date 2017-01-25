@@ -7,10 +7,28 @@ import congye6.HotelBooking.enumeration.SearchHotelCondition;
  * @author 周聪
  * 2017年1月22日
  */
-public class ConditionVO<T> {
+public class ConditionVO {
 
+	/**
+	 * 搜索的方法
+	 */
 	public SearchHotelCondition condition;
 	
-	public T value;
+	/**
+	 * 搜索的范围
+	 */
+	public Object value;
+
+	public ConditionVO(SearchHotelCondition condition, Object value) {
+		super();
+		this.condition = condition;
+		this.value = value;
+	}
+
+	public ConditionVO() {
+		super();
+	}
+	
+	
 	
 }

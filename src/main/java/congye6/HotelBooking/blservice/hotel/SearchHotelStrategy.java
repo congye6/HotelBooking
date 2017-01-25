@@ -10,7 +10,7 @@ import congye6.HotelBooking.vo.HotelVO;
  * 2016年12月24日
  * 上午10:52:10
  */
-public interface SearchHotelStrategy<T> {
+public interface SearchHotelStrategy {
 	/**
 	 * 根据条件搜索酒店
 	 * @author congye6
@@ -18,5 +18,5 @@ public interface SearchHotelStrategy<T> {
 	 * @param condition
 	 * @return
 	 */
-	public List<HotelVO> searchHotel(List<HotelVO> list,T condition);
+	public List<HotelVO> searchHotel(List<HotelVO> list,Object condition);
 }

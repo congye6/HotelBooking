@@ -32,7 +32,7 @@ public interface HotelBlService {
 	 * @param conditions
 	 * @return
 	 */
-	public List<HotelVO> getHotels(String city,String commecialCircle,List<ConditionVO<?>> conditions);
+	public List<HotelVO> getHotels(String city,String commecialCircle,List<ConditionVO> conditions);
 	
 	/**
 	 * 管理员添加酒店

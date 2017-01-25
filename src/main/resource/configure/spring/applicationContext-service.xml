@@ -15,4 +15,7 @@
 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 	<context:component-scan base-package="congye6.HotelBooking.blservice" />
 	
+	<!-- 获取springbean的util -->
+	<!-- SpringContextUtil.getBean(name) -->
+	<bean class="congye6.HotelBooking.util.SpringContextUtil" lazy-init="false" />
 </beans>
