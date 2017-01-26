@@ -12,6 +12,7 @@ import congye6.HotelBooking.blservice.hotel.SearchHotelStrategy;
 import congye6.HotelBooking.mapper.hotel.HotelMapper;
 import congye6.HotelBooking.po.HotelPO;
 import congye6.HotelBooking.util.SpringContextUtil;
+import congye6.HotelBooking.util.StringUtil;
 import congye6.HotelBooking.vo.ConditionVO;
 import congye6.HotelBooking.vo.HotelVO;
 import congye6.HotelBooking.vo.ResultMessage;
@@ -46,14 +47,25 @@ public class HotelBl implements HotelBlService{
 
 	@Override
 	public ResultMessage addHotel(HotelVO hotel) {
-		// TODO Auto-generated method stub
-		return null;
+		if(StringUtil.isNull(hotel.name))
+			return new ResultMessage(false, "请输入酒店名称");
+		HotelPO po=hotel.getPO();
+		mapper.addHotel(po);
+		return new ResultMessage(true, po.getId()+"");
 	}
 
 	@Override
 	public ResultMessage updateHotel(HotelVO hotel) {
-		// TODO Auto-generated method stub
-		return null;
+		HotelPO po=hotel.getPO();
+		mapper.updateHotel(po);
+		return new ResultMessage(true);
+	}
+
+	@Override
+	public HotelVO getHotel(int hotelId) {
+		HotelPO po=mapper.getHotel(hotelId);
+		HotelVO hotel=new HotelVO(po);
+		return hotel;
 	}
 
 }

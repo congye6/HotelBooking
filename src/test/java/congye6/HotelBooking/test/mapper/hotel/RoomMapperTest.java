@@ -30,11 +30,11 @@ public class RoomMapperTest {
 	
 	@Test
 	public void minusRoom(){
-		mapper.minusRoom(1, "suit");
+		mapper.minusRoom(1, "suit",1);
 	}
 	
 	@Test
 	public void addRoom(){
-		mapper.addRoom(1,"single");
+		mapper.addRoom(1,"single",1);
 	}
 }

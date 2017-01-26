@@ -45,14 +45,14 @@ public class RoomBl implements RoomBlService{
 	}
 
 	@Override
-	public ResultMessage minusRoom(int hotelId, RoomType type) {
-		mapper.minusRoom(hotelId, type.toString());
+	public ResultMessage minusRoom(int hotelId, RoomType type,int num) {
+		mapper.minusRoom(hotelId, type.toString(),num);
 		return new ResultMessage(true);
 	}
 
 	@Override
-	public ResultMessage addRoom(int hotelId, RoomType type) {
-		mapper.addRoom(hotelId, type.toString());
+	public ResultMessage addRoom(int hotelId, RoomType type,int num) {
+		mapper.addRoom(hotelId, type.toString(),num);
 		return new ResultMessage(true);
 	}
 

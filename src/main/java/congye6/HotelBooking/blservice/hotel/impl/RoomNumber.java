@@ -20,4 +20,9 @@ public class RoomNumber implements RoomNumberService{
 		return leftRoomNumber+checkOutNumber;
 	}
 
+	@Override
+	public int getNumber(int hotelId, RoomType type) {
+		return roomMapper.getNumber(hotelId, type.toString());
+	}
+
 }

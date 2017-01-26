@@ -31,20 +31,20 @@ public interface RoomBlService {
 	public ResultMessage addRoomInfo(RoomVO vo);
 	
 	/**
-	 * 预订客房后，房间数减一
+	 * 预订客房后，房间数减num
 	 * @author congye6
 	 * @param hotelId
 	 * @param type
 	 * @return
 	 */
-	public ResultMessage minusRoom(int hotelId,RoomType type);
+	public ResultMessage minusRoom(int hotelId,RoomType type,int num);
 	
 	/**
-	 * 退房后房间数加一
+	 * 退房后房间数加num
 	 * @author congye6
 	 * @param hotelId
 	 * @param type
 	 * @return
 	 */
-	public ResultMessage addRoom(int hotelId,RoomType type);
+	public ResultMessage addRoom(int hotelId,RoomType type,int num);
 }

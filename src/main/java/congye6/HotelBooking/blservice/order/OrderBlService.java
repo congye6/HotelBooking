@@ -16,7 +16,7 @@ public interface OrderBlService {
 	
 	/**
 	 * 预订酒店
-	 * 前置：酒店房间数足够
+	 * 前置：酒店房间数足够，只有房间实际退房后才可继续预订
 	 * 后置：减少酒店的房间数量
 	 * @author congye6
 	 * @param vo

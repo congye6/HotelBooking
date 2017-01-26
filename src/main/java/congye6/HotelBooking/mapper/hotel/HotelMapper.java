@@ -32,7 +32,7 @@ public interface HotelMapper {
 	 * @param hotel
 	 * @return
 	 */
-	public void addHotel(HotelPO hotel);
+	public int addHotel(HotelPO hotel);
 	
 	/**
 	 * 酒店管理人员更新酒店信息

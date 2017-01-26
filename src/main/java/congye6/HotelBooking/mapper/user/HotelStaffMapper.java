@@ -14,7 +14,7 @@ public interface HotelStaffMapper {
 	 * @param vo
 	 * @return
 	 */
-	public void addHotelStaff(HotelStaffPO po);
+	public int addHotelStaff(HotelStaffPO po);
 	
 	/**
 	 * 获取所有酒店工作人员信息

@@ -16,12 +16,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<update id="minusRoom">
-		update `room` set `number`=`number`-1
+		update `room` set `number`=`number`-#{num}
 		where hotelId=#{hotelId} and `type`=#{type}
 	</update>
 	
 	<update id="addRoom">
-		update `room` set `number`=`number`+1
+		update `room` set `number`=`number`+#{num}
 		where hotelId=#{hotelId} and `type`=#{type}
 	</update>
 </mapper>

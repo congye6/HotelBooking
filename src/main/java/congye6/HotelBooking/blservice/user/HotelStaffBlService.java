@@ -15,6 +15,7 @@ public interface HotelStaffBlService {
 	/**
 	 * 前置：酒店存在
 	 * 添加酒店工作人员账号
+	 * 先添加账号再添加账号信息
 	 * 每个酒店一个账号
 	 * @author congye6
 	 * @param vo

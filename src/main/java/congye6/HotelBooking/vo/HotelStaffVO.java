@@ -15,7 +15,7 @@ public class HotelStaffVO {
 	 * 所属酒店id
 	 */
 	@Min(value=1,message="{hotelId.min}")
-	public String hotelId;
+	public int hotelId;
 	
 	/**
 	 * 
@@ -25,7 +25,7 @@ public class HotelStaffVO {
 	/**
 	 * 账号id
 	 */
-	public String id;
+	public int id;
 	
 	/**
 	 * 姓名
@@ -42,7 +42,7 @@ public class HotelStaffVO {
 	 * @param id
 	 * @param name
 	 */
-	public HotelStaffVO(String hotelId, String hotelName, String id, String name,String password) {
+	public HotelStaffVO(int hotelId, String hotelName, int id, String name,String password) {
 		super();
 		this.hotelId = hotelId;
 		this.hotelName = hotelName;

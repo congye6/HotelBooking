@@ -13,6 +13,14 @@ import congye6.HotelBooking.vo.ResultMessage;
  * 下午8:17:06
  */
 public interface HotelBlService {
+	
+	/**
+	 * 根据id获取酒店信息
+	 * @param hotelId
+	 * @return
+	 * 2017年1月26日
+	 */
+	public HotelVO getHotel(int hotelId);
 
 	/**
 	 * 根据城市和商圈查找酒店

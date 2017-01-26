@@ -15,5 +15,13 @@ public interface RoomNumberService {
 	 * 2017年1月25日
 	 */
 	public int getNumber(int hotelId, RoomType type, String date);
+	/**
+	 * 获取当前剩余房间数
+	 * @param hotelId
+	 * @param type
+	 * @return
+	 * 2017年1月26日
+	 */
+	public int getNumber(int hotelId, RoomType type);
 	
 }

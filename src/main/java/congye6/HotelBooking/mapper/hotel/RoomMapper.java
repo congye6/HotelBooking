@@ -35,7 +35,8 @@ public interface RoomMapper {
 	 * @param type
 	 * @return
 	 */
-	public void minusRoom(@Param("hotelId")int hotelId,@Param("type")String type);
+	public void minusRoom(@Param("hotelId")int hotelId,
+			@Param("type")String type,@Param("num")int num);
 		
 	/**
 	 * 退房后房间数加一
@@ -44,5 +45,6 @@ public interface RoomMapper {
 	 * @param type
 	 * @return
 	 */
-	public void addRoom(@Param("hotelId")int hotelId,@Param("type")String type);
+	public void addRoom(@Param("hotelId")int hotelId,
+			@Param("type")String type,@Param("num")int num);
 }

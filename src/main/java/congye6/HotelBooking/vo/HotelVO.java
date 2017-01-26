@@ -59,6 +59,12 @@ public class HotelVO {
 	public HotelVO(HotelPO po){
 		BeanUtils.copyProperties(po, this);
 	}
+	
+	public HotelPO getPO(){
+		HotelPO po=new HotelPO();
+		BeanUtils.copyProperties(this, po);
+		return po;
+	}
 
 	public int getId() {
 		return id;
