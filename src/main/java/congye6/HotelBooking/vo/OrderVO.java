@@ -105,6 +105,19 @@ public class OrderVO {
 			roomOrder.put(RoomType.valueOf(roomInfo.getType()), roomInfo.getNumber());
 		}
 	}
+	/**
+	 * 仅复制基本信息
+	 * 不包括退房信息
+	 * @param orderInfo
+	 */
+	public OrderVO(OrderPO orderInfo) {
+		// 复制基本信息
+		BeanUtils.copyProperties(orderInfo, this);
+		this.orderState = OrderState.valueOf(orderInfo.getState());
+		// 复制入住时间
+		this.checkInInfo = new CheckInVO(orderInfo.getStartDate(), 
+				orderInfo.getEndDate(), orderInfo.getDeadline());
+	}
 	
 	public OrderPO getOrderPO(){
 		OrderPO po=new OrderPO();

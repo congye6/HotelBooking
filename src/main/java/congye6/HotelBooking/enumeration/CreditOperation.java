@@ -8,6 +8,7 @@ package congye6.HotelBooking.enumeration;
 public enum CreditOperation {
 	ORDER_EXCUTE,
 	ORDER_EXCEPTION,
+	RECOVER_EXCEPTION,
 	ORDER_CANCEL,
 	RECHARGE
 }

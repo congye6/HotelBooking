@@ -14,8 +14,6 @@ public class DateUtil {
 	 */
 	public static boolean isPastDate(String str){
 		//不符合格式
-		if(!StringUtil.isDate(str))
-			return false;
 		Date date=getDate(str);
 		if(date==null)
 			return false;
@@ -31,8 +29,6 @@ public class DateUtil {
 	 */
 	public static boolean isFutureDate(String str){
 		//不符合格式
-		if(!StringUtil.isDate(str))
-			return false;
 		Date date=getDate(str);
 		if(date==null)
 			return false;

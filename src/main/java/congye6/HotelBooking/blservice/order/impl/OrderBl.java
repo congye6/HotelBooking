@@ -1,5 +1,6 @@
 package congye6.HotelBooking.blservice.order.impl;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
@@ -15,6 +16,7 @@ import congye6.HotelBooking.enumeration.OrderState;
 import congye6.HotelBooking.enumeration.RoomType;
 import congye6.HotelBooking.mapper.order.OrderMapper;
 import congye6.HotelBooking.mapper.order.OrderRoomMapper;
+import congye6.HotelBooking.po.CheckInPO;
 import congye6.HotelBooking.po.OrderPO;
 import congye6.HotelBooking.po.OrderRoomPO;
 import congye6.HotelBooking.vo.CheckInVO;
@@ -53,11 +55,81 @@ public class OrderBl implements OrderBlService{
 			roomBl.minusRoom(vo.hotelId, RoomType.valueOf(roomInfo.getType()),roomInfo.getNumber());
 		}
 		
-		
-		
 		return new ResultMessage(true);
 	}
 
+	
+
+	@Override
+	public ResultMessage updateOrder(int orderId, CheckInVO checkInVO) {
+		orderMapper.updateOrderDate(new CheckInPO(orderId, checkInVO.startDate,
+				checkInVO.endDate, checkInVO.deadline));
+		return new ResultMessage(true);
+	}
+
+	@Override
+	public List<OrderVO> getOrdersByUser(int userId, OrderState orderState) {
+		List<OrderPO> orders=orderMapper.getOrdersByUser(userId, orderState.toString());
+		return getVO(orders);
+	}
+
+	@Override
+	public List<OrderVO> getOrdersByHotel(int hotelId, OrderState orderState) {
+		List<OrderPO> orders=orderMapper.getOrdersByHotel(hotelId, orderState.toString());
+		return getVO(orders);
+	}
+
+	@Override
+	public List<OrderVO> getOrders(int userId, int hotelId) {
+		List<OrderPO> orders=orderMapper.getOrders(userId, hotelId);
+		return getVO(orders);
+	}
+
+	@Override
+	public List<OrderState> hasOrdered(int userId, int hotelId) {
+		List<String> states=orderMapper.getOrderState(userId, hotelId);
+		List<OrderState> result=new ArrayList<>();
+		for(String state:states){
+			result.add(OrderState.valueOf(state));
+		}
+		return result;
+	}
+
+	@Override
+	public List<OrderVO> getUnfinishOrder() {
+		List<OrderPO> orders=orderMapper.getUnfinishOrder();
+		return getVO(orders);
+	}
+
+	@Override
+	public OrderVO getOrderById(int orderId) {
+		//订单基本信息
+		OrderPO order=orderMapper.getOrderById(orderId);
+		if(order==null)
+			return null;
+		//订房信息
+		List<OrderRoomPO> roomInfo=roomMapper.getOrderRoom(orderId); 
+		
+		OrderVO vo=new OrderVO(order,roomInfo);
+		
+		return vo;
+	}
+	
+	/**
+	 * 复制订单基本信息
+	 * @param orders
+	 * @return
+	 * 2017年1月26日
+	 */
+	private List<OrderVO> getVO(List<OrderPO> orders){
+		List<OrderVO> result=new ArrayList<>();
+		for(OrderPO order:orders){
+			OrderVO vo=new OrderVO(order);
+			result.add(vo);
+		}
+		return result;
+	}
+	
 	/**
 	 * 检查是否有足够房间
 	 * 不包括未实际退房的房间
@@ -76,56 +148,6 @@ public class OrderBl implements OrderBlService{
 				return new ResultMessage(false, "房间数量不足，抱歉");
 		}
 		return new ResultMessage(true);
-	}
-
-	@Override
-	public ResultMessage updateOrder(int orderId, CheckInVO checkInVO) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<OrderVO> getOrdersByUser(int userId, OrderState orderState) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<OrderVO> getOrdersByHotel(int hotelId, OrderState orderState) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<OrderVO> getOrders(int userId, int hotelId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<OrderState> hasOrdered(int userId, int hotelId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<OrderVO> getUnfinishOrder() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public OrderVO getOrderById(int orderId) {
-		//订单基本信息
-		OrderPO order=orderMapper.getOrderById(orderId);
-		if(order==null)
-			return null;
-		//订房信息
-		List<OrderRoomPO> roomInfo=roomMapper.getOrderRoom(orderId); 
-		
-		OrderVO vo=new OrderVO(order,roomInfo);
-		
-		return vo;
 	}
 
 }

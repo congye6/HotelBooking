@@ -32,6 +32,18 @@ public interface CreditBlService {
 	public ResultMessage exceptionOrder(int userId,int orderId,double money);
 	
 	/**
+	 * 申诉取消异常的订单
+	 * 恢复相应比例的信用值
+	 * @param userId
+	 * @param orderId
+	 * @param money
+	 * @param recoverRate
+	 * @return
+	 * 2017年1月29日
+	 */
+	public ResultMessage cancelException(int userId,int orderId,double money,double recoverRate);
+	
+	/**
 	 * 完成入住的订单可以增加等于订单额的信用值
 	 * 操作后添加使用记录
 	 * @author congye6

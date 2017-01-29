@@ -14,21 +14,18 @@ public class CheckInVO {
 	 * 入住时间
 	 */
 	@NotEmpty(message="{checkin.startDate.null}")
-	@FutureDate(message="{checkin.startDate.future}")
 	public String startDate;
 	
 	/**
 	 * 退房时间
 	 */
 	@NotEmpty(message="{checkin.endDate.null}")
-	@FutureDate(message="{checkin.endDate.future}")
 	public String endDate;
 	
 	/**
 	 * 最晚执行时间
 	 */
 	@NotEmpty(message="{checkin.deadline.null}")
-	@FutureDate(message="{checkin.deadline.future}")
 	public String deadline;
 
 	/**

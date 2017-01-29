@@ -107,4 +107,22 @@ public class CreditBl implements CreditBlService{
 		return results;
 	}
 
+	@Override
+	public ResultMessage cancelException(int userId, int orderId, double money, double recoverRate) {
+		if(recoverRate>1||recoverRate<0)
+			return new ResultMessage(false, "信用值恢复比例为0.0--1.0");
+		// 修改的用户记录数，为0时表示出错
+		int updateNum = clientMapper.addCredit(userId, money*recoverRate);
+		if (updateNum == 0)
+			return new ResultMessage(false, "恢复信用值失败");
+
+		ClientVO clientInfo = clientBl.getClientInfo(userId);
+		// 保存使用记录
+		CreditRecordPO record = new CreditRecordPO(userId, DateUtil.getToday(), orderId,
+				CreditOperation.RECOVER_EXCEPTION.toString(), money*recoverRate, clientInfo.credit);
+		creditRecordMapper.addCreditRecord(record);
+
+		return new ResultMessage(true);
+	}
+
 }
