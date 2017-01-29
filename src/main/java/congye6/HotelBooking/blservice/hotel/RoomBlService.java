@@ -1,6 +1,7 @@
 package congye6.HotelBooking.blservice.hotel;
 
 import java.util.List;
+import java.util.Map;
 
 import congye6.HotelBooking.enumeration.RoomType;
 import congye6.HotelBooking.vo.ResultMessage;
@@ -47,4 +48,22 @@ public interface RoomBlService {
 	 * @return
 	 */
 	public ResultMessage addRoom(int hotelId,RoomType type,int num);
+	
+	/**
+	 * 预订房间，减少相应房间的数量
+	 * @param hotelId
+	 * @param roomNumMap
+	 * @return
+	 * 2017年1月29日
+	 */
+	public ResultMessage bookingRoom(int hotelId,Map<RoomType,Integer> roomNumMap);
+	
+	/**
+	 * 退房，增加相应房间的数量
+	 * @param hotelId
+	 * @param roomNumMap
+	 * @return
+	 * 2017年1月29日
+	 */
+	public ResultMessage checkOut(int hotelId,Map<RoomType,Integer> roomNumMap);
 }

@@ -1,7 +1,10 @@
 package congye6.HotelBooking.blservice.hotel.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +56,30 @@ public class RoomBl implements RoomBlService{
 	@Override
 	public ResultMessage addRoom(int hotelId, RoomType type,int num) {
 		mapper.addRoom(hotelId, type.toString(),num);
+		return new ResultMessage(true);
+	}
+
+	@Override
+	public ResultMessage bookingRoom(int hotelId, Map<RoomType, Integer> roomNumMap) {
+		Iterator<Entry<RoomType, Integer>> iterator=roomNumMap.entrySet().iterator();
+		while(iterator.hasNext()){
+			Entry<RoomType, Integer> entry=iterator.next();
+			ResultMessage message=this.addRoom(hotelId, entry.getKey(), entry.getValue());
+			if(!message.isSuccess())
+				return message;
+		}
+		return new ResultMessage(true);
+	}
+
+	@Override
+	public ResultMessage checkOut(int hotelId, Map<RoomType, Integer> roomNumMap) {
+		Iterator<Entry<RoomType, Integer>> iterator=roomNumMap.entrySet().iterator();
+		while(iterator.hasNext()){
+			Entry<RoomType, Integer> entry=iterator.next();
+			ResultMessage message=this.minusRoom(hotelId, entry.getKey(), entry.getValue());
+			if(!message.isSuccess())
+				return message;
+		}
 		return new ResultMessage(true);
 	}
 
