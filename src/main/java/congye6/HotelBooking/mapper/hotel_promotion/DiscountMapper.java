@@ -26,7 +26,7 @@ public interface DiscountMapper {
 	 * @return
 	 * 2017年1月11日
 	 */
-	public double getDiscount(@Param("hotelId")int hotelId,@Param("type")String type);
+	public Double getDiscount(@Param("hotelId")int hotelId,@Param("type")String type);
 	
 	/**
 	 * 获取某酒店所有折扣

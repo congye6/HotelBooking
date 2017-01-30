@@ -1,6 +1,7 @@
 package congye6.HotelBooking.blservice.order.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import congye6.HotelBooking.blservice.hotel.RoomBlService;
 import congye6.HotelBooking.blservice.order.CheckOutBlService;
@@ -8,7 +9,7 @@ import congye6.HotelBooking.enumeration.OrderState;
 import congye6.HotelBooking.mapper.order.OrderMapper;
 import congye6.HotelBooking.vo.OrderVO;
 import congye6.HotelBooking.vo.ResultMessage;
-
+@Service
 public class CheckOutBl implements CheckOutBlService{
 	
 	@Autowired

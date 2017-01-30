@@ -1,5 +1,7 @@
 package congye6.HotelBooking.test.mapper.hotel_promotion;
 
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -25,11 +27,13 @@ public class DiscountMapperTest {
 	
 	@Test
 	public void getDiscountByHotel(){
-		mapper.getDiscountByHotel(1);
+		List<DiscountPO> list=mapper.getDiscountByHotel(9);
+		System.out.println(list);
 	}
 	
 	@Test
 	public void getDiscount(){
-		mapper.getDiscount(1, "birthday");
+		Double discount=mapper.getDiscount(9, "birthday");
+		System.out.println(discount);
 	}
 }

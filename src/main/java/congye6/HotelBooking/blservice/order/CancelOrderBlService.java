@@ -2,6 +2,8 @@ package congye6.HotelBooking.blservice.order;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import congye6.HotelBooking.vo.OrderVO;
 import congye6.HotelBooking.vo.ResultMessage;
 

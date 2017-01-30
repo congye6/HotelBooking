@@ -3,6 +3,7 @@ package congye6.HotelBooking.vo;
 import javax.validation.constraints.Min;
 
 import congye6.HotelBooking.enumeration.HotelPromotionType;
+import congye6.HotelBooking.po.DiscountPO;
 import congye6.HotelBooking.validator.annotation.RangeDouble;
 /**
  * @author congye6
@@ -35,6 +36,35 @@ public class DiscountVO {
 	 */
 	public DiscountVO() {
 		super();
+	}
+	
+	public DiscountPO getPO(){
+		DiscountPO po=new DiscountPO(hotelId, promotionType.toString(), discount);
+		return po;
+	}
+
+	public int getHotelId() {
+		return hotelId;
+	}
+
+	public void setHotelId(int hotelId) {
+		this.hotelId = hotelId;
+	}
+
+	public HotelPromotionType getPromotionType() {
+		return promotionType;
+	}
+
+	public void setPromotionType(HotelPromotionType promotionType) {
+		this.promotionType = promotionType;
+	}
+
+	public double getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(double discount) {
+		this.discount = discount;
 	}
 	
 	

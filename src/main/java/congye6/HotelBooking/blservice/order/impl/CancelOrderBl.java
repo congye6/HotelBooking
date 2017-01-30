@@ -3,6 +3,7 @@ package congye6.HotelBooking.blservice.order.impl;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import congye6.HotelBooking.blservice.client.CreditBlService;
@@ -11,12 +12,11 @@ import congye6.HotelBooking.blservice.order.CancelOrderBlService;
 import congye6.HotelBooking.blservice.order.OrderBlService;
 import congye6.HotelBooking.enumeration.OrderState;
 import congye6.HotelBooking.mapper.order.OrderMapper;
-import congye6.HotelBooking.po.OrderPO;
 import congye6.HotelBooking.util.DateTimeUtil;
 import congye6.HotelBooking.util.DateUtil;
 import congye6.HotelBooking.vo.OrderVO;
 import congye6.HotelBooking.vo.ResultMessage;
-
+@Service
 public class CancelOrderBl implements CancelOrderBlService{
 	
 	@Autowired
