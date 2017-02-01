@@ -12,4 +12,13 @@ public interface ClientValidatorService {
 	 * 2017年1月22日
 	 */
 	public boolean isClient(int userId);
+	
+	/**
+	 * 验证客户是否可以订酒店
+	 * 信用值小于零不能预订
+	 * @param userId
+	 * @return
+	 * 2017年2月1日
+	 */
+	public boolean isGoodClient(int userId);
 }

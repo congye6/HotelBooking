@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import congye6.HotelBooking.blservice.client.ClientValidatorService;
 import congye6.HotelBooking.blservice.hotel.RoomBlService;
 import congye6.HotelBooking.blservice.hotel.RoomNumberService;
 import congye6.HotelBooking.blservice.order.OrderBlService;
@@ -36,9 +37,16 @@ public class OrderBl implements OrderBlService{
 	
 	@Autowired
 	private RoomBlService roomBl;
+	
+	@Autowired
+	private ClientValidatorService clientService;
 
 	@Override
 	public ResultMessage makeOrder(OrderVO vo) {
+		//检查用户是否可以预订酒店
+		if(!clientService.isGoodClient(vo.userId))
+			return new ResultMessage(false, "信用值不足，不能预订酒店");
+		
 		//检查是否有足够房间
 		ResultMessage message=checkEnoughRoom(vo);
 		if(!message.isSuccess())

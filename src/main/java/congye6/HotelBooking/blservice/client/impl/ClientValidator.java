@@ -14,12 +14,21 @@ public class ClientValidator implements ClientValidatorService{
 	
 	@Override
 	public boolean isClient(int userId) {
-		if(userId<=0)
-			return false;
 		
 		ClientPO po=mapper.getClient(userId);
 		if(po==null)
 			return false;
+		return true;
+	}
+
+	@Override
+	public boolean isGoodClient(int userId) {
+		ClientPO po=mapper.getClient(userId);
+		if(po==null)
+			return false;
+		if(po.getCredit()<0)
+			return false;
+		
 		return true;
 	}
 

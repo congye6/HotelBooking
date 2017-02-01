@@ -1,6 +1,8 @@
 package congye6.HotelBooking.blservice.hotel_promotion;
 
 import java.util.List;
+
+import congye6.HotelBooking.po.DiscountPO;
 import congye6.HotelBooking.vo.DiscountVO;
 import congye6.HotelBooking.vo.OrderVO;
 import congye6.HotelBooking.vo.ResultMessage;
@@ -21,21 +23,7 @@ public interface HotelPromotionBlService {
 	 * @param order
 	 * @return
 	 */
-	public double getDiscount(OrderVO order);
+	public double getPrice(OrderVO order);
 	
-	/**
-	 * 设置折扣
-	 * @author congye6
-	 * @param vo
-	 * @return
-	 */
-	public ResultMessage setDiscount(DiscountVO vo);
 	
-	/**
-	 * 设置多个折扣
-	 * @author congye6
-	 * @param vo
-	 * @return
-	 */
-	public ResultMessage setDiscount(List<DiscountVO> vo);
 }

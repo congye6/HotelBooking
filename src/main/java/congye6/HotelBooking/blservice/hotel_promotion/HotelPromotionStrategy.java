@@ -10,10 +10,10 @@ import congye6.HotelBooking.vo.OrderVO;
 public interface HotelPromotionStrategy {
 
 	/**
-	 * 获取折扣
+	 * 获取折扣价
 	 * @author congye6
 	 * @param vo
 	 * @return
 	 */
-	public double getDiscount(OrderVO vo);
+	public double getPrice(OrderVO vo);
 }
