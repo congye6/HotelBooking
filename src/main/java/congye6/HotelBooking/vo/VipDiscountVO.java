@@ -3,6 +3,7 @@ package congye6.HotelBooking.vo;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 
+import congye6.HotelBooking.po.VipDiscountPO;
 import congye6.HotelBooking.validator.annotation.RangeDouble;
 
 /**
@@ -37,5 +38,15 @@ public class VipDiscountVO {
 		super();
 	}
 	
+	public VipDiscountVO(VipDiscountPO po){
+		this(po.getCircle(),po.getLevel(),po.getDiscount());
+	}
+	
+	public VipDiscountPO getPO(){
+		VipDiscountPO po=new VipDiscountPO(level, circle, discount);
+		return po;
+	}
+	
 	
 }
+

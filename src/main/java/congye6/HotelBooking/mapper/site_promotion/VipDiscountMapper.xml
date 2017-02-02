@@ -14,4 +14,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getDiscount" resultType="double">
 		select `discount` from vip_discount where circle=#{circle} and level=#{level}
 	</select>
+	
+	<select id="getDiscountByCircle" resultType="VipDiscountPO">
+		select * from vip_discount where circle=#{circle}
+	</select>
 </mapper>

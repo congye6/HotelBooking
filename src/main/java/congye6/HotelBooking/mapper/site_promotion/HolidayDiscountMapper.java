@@ -18,5 +18,5 @@ public interface HolidayDiscountMapper {
 	 * @return
 	 * 2017年1月12日
 	 */
-	public double getDiscount();
+	public Double getDiscount();
 }
