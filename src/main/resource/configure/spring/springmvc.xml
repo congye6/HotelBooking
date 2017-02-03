@@ -42,7 +42,9 @@
     
   	
   	
-  	<context:component-scan base-package="congye6.HotelBooking.controller" />
+  	<context:component-scan base-package="congye6.HotelBooking.controller">
+  		
+  	</context:component-scan>
   	
     
 	

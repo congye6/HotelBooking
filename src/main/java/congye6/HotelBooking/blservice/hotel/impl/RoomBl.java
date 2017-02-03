@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import congye6.HotelBooking.blservice.hotel.HotelValidatorService;
 import congye6.HotelBooking.blservice.hotel.RoomBlService;
@@ -16,7 +17,7 @@ import congye6.HotelBooking.mapper.hotel.RoomMapper;
 import congye6.HotelBooking.po.RoomPO;
 import congye6.HotelBooking.vo.ResultMessage;
 import congye6.HotelBooking.vo.RoomVO;
-
+@Service
 public class RoomBl implements RoomBlService{
 
 	@Autowired

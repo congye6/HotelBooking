@@ -33,7 +33,7 @@ public class IndexController {
 	 */
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public ModelAndView index(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
-		int id=Integer.parseInt(CookieHelper.getCookie(request, CookieHelper.USER_NAME));
+		int id=Integer.parseInt(CookieHelper.getCookie(request, CookieHelper.ID));
 		String password=CookieHelper.getCookie(request, CookieHelper.PASSWORD);
 		UserType userType=accountBl.getUserType(id, password);
 		String url=dispatcher.getUrl(userType);

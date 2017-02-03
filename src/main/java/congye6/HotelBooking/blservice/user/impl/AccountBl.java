@@ -2,9 +2,7 @@ package congye6.HotelBooking.blservice.user.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.sun.accessibility.internal.resources.accessibility_zh_CN;
-
+import org.springframework.transaction.annotation.Transactional;
 import congye6.HotelBooking.blservice.user.AccountBlService;
 import congye6.HotelBooking.enumeration.UserType;
 import congye6.HotelBooking.mapper.user.AccountMapper;
@@ -12,6 +10,7 @@ import congye6.HotelBooking.po.AccountPO;
 import congye6.HotelBooking.vo.AccountVO;
 import congye6.HotelBooking.vo.ResultMessage;
 @Service
+@Transactional
 public class AccountBl implements AccountBlService{
 
 	@Autowired
