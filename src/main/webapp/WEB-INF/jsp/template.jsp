@@ -14,6 +14,7 @@
 		    <!-- Custom styles for this template -->
 		    <link href="/HotelBooking/assets/css/style.css" rel="stylesheet">
 		    <link href="/HotelBooking/assets/css/style-responsive.css" rel="stylesheet">
+		    <link href="/HotelBooking/css/alert.css" rel="stylesheet">
 		</congye6:block>
 	</head>
 	<body>
@@ -302,7 +303,8 @@
 		    <!--common script for all pages-->
 		    <script src="/HotelBooking/assets/js/common-scripts.js"></script>
 		    
-		    <script src="/HotelBooking/js/cookie.js"></script>
+		    <script type="text/javascript" src="/HotelBooking/js/alert.js"></script>
+			<script type="text/javascript" src="/HotelBooking/js/cookie.js"></script>
 		</congye6:block>
 		
 		<script>
