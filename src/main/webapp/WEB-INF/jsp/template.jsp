@@ -305,6 +305,8 @@
 		    
 		    <script type="text/javascript" src="/HotelBooking/js/alert.js"></script>
 			<script type="text/javascript" src="/HotelBooking/js/cookie.js"></script>
+			<script type="text/javascript" src="/HotelBooking/js/url.js"></script>
+			<script type="text/javascript" src="/HotelBooking/js/table.js"></script>
 		</congye6:block>
 		
 		<script>
