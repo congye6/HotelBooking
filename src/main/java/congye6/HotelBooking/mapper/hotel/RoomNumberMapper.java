@@ -13,13 +13,13 @@ public interface RoomNumberMapper {
 	 * @return
 	 * 2017年1月25日
 	 */
-	public int getNumber(@Param("hotelId")int hotelId,@Param("type")String type);
+	public Integer getNumber(@Param("hotelId")int hotelId,@Param("type")String type);
 	
 	/**
 	 * 获取在某天前退房数量
 	 * @return
 	 * 2017年1月25日
 	 */
-	public int getCheckOutNumber(@Param("hotelId")int hotelId,
+	public Integer getCheckOutNumber(@Param("hotelId")int hotelId,
 			@Param("type")String type,@Param("date") String date);
 }

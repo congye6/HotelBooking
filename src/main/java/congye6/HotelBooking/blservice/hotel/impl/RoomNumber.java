@@ -15,14 +15,21 @@ public class RoomNumber implements RoomNumberService{
 
 	@Override
 	public int getNumber(int hotelId, RoomType type, String date) {
-		int leftRoomNumber=roomMapper.getNumber(hotelId, type.toString());
-		int checkOutNumber=roomMapper.getCheckOutNumber(hotelId, type.toString(), date);
+		Integer leftRoomNumber=roomMapper.getNumber(hotelId, type.toString());
+		Integer checkOutNumber=roomMapper.getCheckOutNumber(hotelId, type.toString(), date);
+		if(leftRoomNumber==null)
+			leftRoomNumber=0;
+		if(checkOutNumber==null)
+			checkOutNumber=0;
 		return leftRoomNumber+checkOutNumber;
 	}
 
 	@Override
 	public int getNumber(int hotelId, RoomType type) {
-		return roomMapper.getNumber(hotelId, type.toString());
+		Integer number=roomMapper.getNumber(hotelId, type.toString());
+		if(number==null)
+			return 0;
+		return number;
 	}
 
 }

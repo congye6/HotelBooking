@@ -15,12 +15,12 @@ public class RoomPriceVO {
 	/**
 	 * 最低价格
 	 */
-	public double lowPrice;
+	public Double lowPrice;
 	
 	/**
 	 * 最高价格
 	 */
-	public double highPrice;
+	public Double highPrice;
 	
 	/**
 	 * 判断价格是否在合适区间内
@@ -30,11 +30,23 @@ public class RoomPriceVO {
 	 * 2017年1月25日
 	 */
 	public boolean isGoodPrice(double price){
-		if(price<lowPrice)
+		if(lowPrice!=null&&price<lowPrice)
 			return false;
-		if(price>highPrice)
+		if(highPrice!=null&&price>highPrice)
 			return false;
 		return true;
+	}
+
+	/**
+	 * @param roomType
+	 * @param lowPrice
+	 * @param highPrice
+	 */
+	public RoomPriceVO(RoomType roomType, Double lowPrice, Double highPrice) {
+		super();
+		this.roomType = roomType;
+		this.lowPrice = lowPrice;
+		this.highPrice = highPrice;
 	}
 	
 	

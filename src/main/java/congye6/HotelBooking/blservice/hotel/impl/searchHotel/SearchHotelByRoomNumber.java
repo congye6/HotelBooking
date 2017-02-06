@@ -21,8 +21,8 @@ public class SearchHotelByRoomNumber implements SearchHotelStrategy{
 		RoomNumberVO condition=(RoomNumberVO)obj;
 		List<HotelVO> result=new ArrayList<>();
 		for(HotelVO hotel:list){
-			int roomNumber=roomNumberBl.getNumber(hotel.id,condition.roomType,condition.checkInDate);
-			if(roomNumber>=condition.roomNum)
+			Integer roomNumber=roomNumberBl.getNumber(hotel.id,condition.roomType,condition.checkInDate);
+			if(roomNumber!=null&&roomNumber>=condition.roomNum)
 				result.add(hotel);
 		}
 		

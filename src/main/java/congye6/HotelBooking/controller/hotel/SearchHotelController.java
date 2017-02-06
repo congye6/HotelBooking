@@ -2,6 +2,7 @@ package congye6.HotelBooking.controller.hotel;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import congye6.HotelBooking.blservice.hotel.HotelBlService;
 import congye6.HotelBooking.util.StringUtil;
 import congye6.HotelBooking.util.Utf8EncodingUtil;
+import congye6.HotelBooking.vo.ConditionVO;
 import congye6.HotelBooking.vo.HotelSearchVO;
 import congye6.HotelBooking.vo.HotelVO;
 
@@ -33,10 +35,10 @@ public class SearchHotelController {
 		return result;
 	}
 	
-	@RequestMapping(value="/hotel",method=RequestMethod.GET)
+	@RequestMapping(value="/hotel",method=RequestMethod.POST)
 	public @ResponseBody List<HotelVO> searchHotel(@RequestBody HotelSearchVO vo){
-		
-		return null;
+		List<ConditionVO> conditions=vo.getConditions();
+		return hotelBl.getHotels(vo.city, vo.circle, conditions);
 	}
 	
 }

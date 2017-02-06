@@ -52,6 +52,9 @@
              	<div class="form-group"> 
                      <input type="text" class="form-control" id="number" placeholder="数量">
                  </div>
+                 <div class="form-group"> 
+                     <input type="text" class="form-control" id="checkInDate" placeholder="入住时间">
+                 </div>
                  <div class="form-group">
                      <input type="text" class="form-control" id="high" placeholder="最高价">
                  </div>
@@ -138,6 +141,7 @@
 	    var low=$("input#low").val();
 	    var high=$("input#high").val();
 	    var number=$("input#number").val();
+	    var checkInDate=$("input#checkInDate").val();
 	    var roomType=$("select").val();
 	    
 	    if(name==""&&star==""&&score==""&&low==""&&high==""&&number==""){
@@ -147,17 +151,20 @@
 	    
 	    $.ajax({
            url: "/HotelBooking/hotel",
-           type : "get",
+           type : "post",
            dateType:"json",
            contentType:"application/json",
            data : JSON.stringify({
+        	   'city' : city,
+        	   'circle':circle,
                'name' : name,
                'star' : star,
                'score': score,
                'low'  : low,
                'high' : high,
                'number':number,
-               'roomType':roomType
+               'roomType':roomType,
+               'checkInDate':checkInDate
            }),
            success : function(data){
                if(data.length==0)
@@ -169,7 +176,5 @@
                zeroModal.alert("系统错误");
            }
        });
-	    
-	    zeroModal.alert(roomType);
 	 })
 </script>

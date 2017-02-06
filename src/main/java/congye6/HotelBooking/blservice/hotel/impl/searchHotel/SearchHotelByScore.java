@@ -19,11 +19,11 @@ public class SearchHotelByScore implements SearchHotelStrategy{
 	 */
 	@Override
 	public List<HotelVO> searchHotel(List<HotelVO> list, Object obj) {
-		ScoreIntervalVO interval=(ScoreIntervalVO)obj;
+		Double num=(Double)obj;
 		List<HotelVO> result=new ArrayList<>();
 		for(HotelVO hotel:list){
 			double score=commentBl.getScore(hotel.id);
-			if(interval.isBetween(score))
+			if(score>num)
 				result.add(hotel);
 		}
 		return result;
