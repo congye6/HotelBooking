@@ -118,6 +118,7 @@
         	   		zeroModal.alert("找不到酒店");
                attrs=["name","star","address","city","circle","introduction"];
                setTableContent(data, attrs, "hotel");
+               addHotelListener(data,"id","hotel");
            },
            error : function(data){
                zeroModal.alert("系统错误");
@@ -171,6 +172,7 @@
         	   		zeroModal.alert("找不到酒店");
                attrs=["name","star","address","city","circle","introduction"];
                setTableContent(data, attrs, "hotel");
+               addHotelListener(data,"id","hotel");
            },
            error : function(data){
                zeroModal.alert("系统错误");

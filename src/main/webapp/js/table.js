@@ -20,3 +20,17 @@ function setTableContent(data,attrs,idName){
 	$("table#"+idName).append(htm);
      });
 }
+
+//监听点击酒店事件
+function addHotelListener(data,key,idName){
+	var index=0;
+	$.each(data,function(i,vo){
+		var id='"'+vo[key]+'"';
+		$("table#"+idName+" tr#auto").eq(index).attr("onclick","hotelInfo("+id+")");
+		index++;
+	});
+}
+
+function hotelInfo(id){
+	window.location.href="/HotelBooking/hotel/"+id;
+}
