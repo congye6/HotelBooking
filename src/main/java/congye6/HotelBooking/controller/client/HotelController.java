@@ -1,7 +1,7 @@
 /**
  * 
  */
-package congye6.HotelBooking.controller.hotel;
+package congye6.HotelBooking.controller.client;
 
 import java.util.List;
 
@@ -41,7 +41,7 @@ public class HotelController {
 	 */
 	@RequestMapping(value="/hotel/{id}",method=RequestMethod.GET)
 	public ModelAndView getHotel(@PathVariable Integer id){
-		ModelAndView modelAndView=new ModelAndView("hotel/hotelInfo");
+		ModelAndView modelAndView=new ModelAndView("client/hotelInfo");
 		//酒店基本信息
 		HotelVO hotel=hotelBl.getHotel(id);
 		modelAndView.addObject("hotel",hotel);

@@ -39,7 +39,7 @@
                         			<td>${room.type}</td>
                         			<td>${room.number}</td>
                         			<td>${room.price}</td>
-                        			<td onclick="book(${room.type},${room.id})">预订</td>
+                        			<td onclick="book('${room.type}','${room.hotelId}')">预订</td>
                         		</tr>
                         	</c:forEach>
                         
@@ -81,7 +81,10 @@
 	</div><!-- /row -->
 
 </congye6:override>
-
-
-
 <jsp:include page="/WEB-INF/jsp/client/clientTemplate.jsp"></jsp:include>
+<script>
+	function book(type,hotelId){
+		window.location.href="/HotelBooking/order/"+hotelId+"/"+type;
+	}
+
+</script>

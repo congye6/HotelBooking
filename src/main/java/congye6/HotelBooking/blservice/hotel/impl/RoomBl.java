@@ -33,6 +33,7 @@ public class RoomBl implements RoomBlService{
 		for(RoomPO po:list){
 			RoomVO room=new RoomVO();
 			BeanUtils.copyProperties(po, room);
+			room.setType(RoomType.valueOf(po.getType()));
 			rooms.add(room);
 		}
 		return rooms;
@@ -44,6 +45,7 @@ public class RoomBl implements RoomBlService{
 			return new ResultMessage(false, "酒店id不存在");
 		RoomPO po=new RoomPO();
 		BeanUtils.copyProperties(vo, po);
+		po.setType(vo.type.toString());
 		mapper.updateRoomInfo(po);
 		return new ResultMessage(true);
 	}

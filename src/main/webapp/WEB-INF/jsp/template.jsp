@@ -115,7 +115,7 @@
 		                            </li>
 		                            <li>
 		                                <a href="index.html#">
-		                                    <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
+		                                    <span class="photo"><img alt="avatar" src="/HotelBooking/assets/img/ui-zac.jpg"></span>
 		                                    <span class="subject">
 		                                    <span class="from">Zac Snider</span>
 		                                    <span class="time">Just now</span>
@@ -127,7 +127,7 @@
 		                            </li>
 		                            <li>
 		                                <a href="index.html#">
-		                                    <span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
+		                                    <span class="photo"><img alt="avatar" src="/HotelBooking/assets/img/ui-divya.jpg"></span>
 		                                    <span class="subject">
 		                                    <span class="from">Divya Manian</span>
 		                                    <span class="time">40 mins.</span>
@@ -139,7 +139,7 @@
 		                            </li>
 		                            <li>
 		                                <a href="index.html#">
-		                                    <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
+		                                    <span class="photo"><img alt="avatar" src="/HotelBooking/assets/img/ui-danro.jpg"></span>
 		                                    <span class="subject">
 		                                    <span class="from">Dan Rogers</span>
 		                                    <span class="time">2 hrs.</span>
@@ -151,7 +151,7 @@
 		                            </li>
 		                            <li>
 		                                <a href="index.html#">
-		                                    <span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>
+		                                    <span class="photo"><img alt="avatar" src="/HotelBooking/assets/img/ui-sherman.jpg"></span>
 		                                    <span class="subject">
 		                                    <span class="from">Dj Sherman</span>
 		                                    <span class="time">4 hrs.</span>
@@ -187,7 +187,7 @@
 		              <!-- sidebar menu start-->
 		              <ul class="sidebar-menu" id="nav-accordion">
 		              
-		              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+		              	  <p class="centered"><a href="profile.html"><img src="/HotelBooking/assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
 		              	  <h5 class="centered" id="userName">Marcel Newman</h5>
 		              	  <congye6:block name="sidebar" override="true">	
 		                  <li class="mt">

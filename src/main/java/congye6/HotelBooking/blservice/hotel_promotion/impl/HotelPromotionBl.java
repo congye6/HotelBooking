@@ -20,7 +20,7 @@ public class HotelPromotionBl implements HotelPromotionBlService{
 	@Override
 	public double getPrice(OrderVO order) {
 		List<DiscountVO> discounts=discountBl.getDiscountByHotel(order.hotelId);
-		double lowestPrice=0;
+		double lowestPrice=Integer.MAX_VALUE;
 		for(DiscountVO discount:discounts){
 			HotelPromotionStrategy promotion=
 					SpringContextUtil.getBean(discount.promotionType.toString());

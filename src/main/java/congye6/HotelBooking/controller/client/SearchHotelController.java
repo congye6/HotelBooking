@@ -1,4 +1,4 @@
-package congye6.HotelBooking.controller.hotel;
+package congye6.HotelBooking.controller.client;
 
 import java.util.ArrayList;
 import java.util.List;
